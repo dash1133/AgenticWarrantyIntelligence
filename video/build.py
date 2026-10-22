@@ -23,12 +23,14 @@ if not overview:
 alignment = HERE / "vo/alignment.json"
 vo = alignment.read_text(encoding="utf-8") if alignment.exists() else "null"
 
+iplogo = base64.b64encode((HERE / "brand/infinite-possibilities.png").read_bytes()).decode("ascii")
 font = base64.b64encode((HERE / "fonts/ibm-plex-sans-latin.woff2").read_bytes()).decode("ascii")
 
 out = (template
        .replace("<!--OVERVIEW-->", overview.group(1))
        .replace("<!--FRAMES-->", "\n".join(frames))
        .replace("/*FONT*/", "data:font/woff2;base64," + font)
-       .replace("/*VO*/null", vo))
+       .replace("/*VO*/null", vo)
+       .replace("/*IPLOGO*/", "data:image/png;base64," + iplogo))
 (HERE / "awi-video.html").write_text(out, encoding="utf-8")
 print("wrote awi-video.html")

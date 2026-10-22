@@ -22,10 +22,17 @@
   /* Captions: the voiceover line, for review until the final recording exists. */
   #cc { position: absolute; left: 0; right: 0; bottom: 20px; z-index: 10;
     display: flex; justify-content: center; pointer-events: none; }
-  #cc span { max-width: 1040px; background: rgba(10, 16, 22, .86); color: #FFFFFF;
+  #cc span { max-width: 900px; background: rgba(10, 16, 22, .86); color: #FFFFFF;
     font-size: 22px; line-height: 1.38; font-weight: 500; padding: 9px 18px;
     border-radius: 6px; text-align: center; }
   body.nocc #cc { display: none; }
+
+  /* "Powered by Infinite Possibilities" badge, bottom-right of every frame after the cover. */
+  #pb { position: absolute; right: 12px; bottom: 6px; z-index: 11; display: flex; align-items: center; gap: 7px;
+    background: rgba(255, 255, 255, .9); border: 1px solid #E2DACB; border-radius: 6px; padding: 4px 9px;
+    pointer-events: none; }
+  #pb span { font-size: 11px; font-weight: 500; color: #5E6A72; letter-spacing: .02em; }
+  #pb img { height: 17px; display: block; }
 
   #hud { position: fixed; left: 0; right: 0; bottom: 0; height: 64px; padding: 0 18px;
     display: flex; align-items: center; gap: 12px; background: #111; color: #D8D8D8; font-size: 13px; }
@@ -110,6 +117,7 @@
 <div style="width: 1280px; height: 720px; background: #F5F1E8; color: #15232F; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 30px; padding-bottom: 20px">
   <div data-in="1" class="rise"><svg width="120" height="120" viewBox="0 0 96 96" aria-hidden="true"><rect width="96" height="96" rx="22" fill="#15232F"/><path d="M48 17 L73 26.5 V46 C73 61.5 63 72.5 48 79 C33 72.5 23 61.5 23 46 V26.5 Z" fill="none" stroke="#E4B44C" stroke-width="4" stroke-linejoin="round"/><path d="M48 37 L37.5 55 M48 37 L58.5 55 M37.5 55 H58.5" stroke="#E4B44C" stroke-width="2.5" stroke-linecap="round" opacity=".85"/><circle cx="48" cy="37" r="5.5" fill="#00A89D"/><circle cx="37.5" cy="55" r="5.5" fill="#00A89D"/><circle cx="58.5" cy="55" r="5.5" fill="#00A89D"/></svg></div>
   <div data-in="2" class="rise" style="font-size: 66px; line-height: 1.05; font-weight: 700; letter-spacing: -.02em; text-align: center">Agentic Warranty Intelligence</div>
+  <div data-in="3" class="rise" style="margin-top: 14px; display: flex; align-items: center; gap: 14px"><span style="font-size: 17px; font-weight: 500; color: #5E6A72">Powered by</span><img src="/*IPLOGO*/" alt="Infinite Possibilities" style="height: 38px; display: block"></div>
 </div>
 </div>
 
@@ -265,6 +273,7 @@
 </div>
 
 <div id="cc"><span></span></div>
+<div id="pb"><span>Powered by</span><img src="/*IPLOGO*/" alt="Infinite Possibilities"></div>
 </div></div>
 
 <!-- ========================================================================
@@ -509,7 +518,7 @@
 
   var BEATS = [
     { label: 'Cover', layer: 'cover', cues: [
-      { text: '', dur: 3.4, novo: true, in: [[1, 0], [2, .15]] }
+      { text: '', dur: 3.4, novo: true, in: [[1, 0], [2, .15], [3, .35]] }
     ]},
     { label: 'Beat 1 · The problem', layer: 'b1', cues: [
       { text: 'Your warranty team is overwhelmed.', in: [[1, 0]] },
@@ -721,6 +730,7 @@
   var ease = function (p) { return 1 - Math.pow(1 - p, 3); };
   var ccSpan = document.querySelector('#cc span');
   var ccEl = document.getElementById('cc');
+  var pbEl = document.getElementById('pb');
 
   function cueIndexAt(time) {
     var i = 0;
@@ -827,6 +837,9 @@
     });
 
     var inSpeech = !!cue.text && time >= cue.start && time < cue.start + cue.dur;
+    // The badge stays off the cover, which carries its own larger lockup.
+    var coverEnd = cues[0].layer === 'cover' ? cues[0].start + cues[0].dur : 0;
+    pbEl.style.opacity = ease(clamp((time - coverEnd) / 0.5)).toFixed(3);
     ccSpan.textContent = cue.text;
     ccEl.style.opacity = inSpeech ? clamp((time - cue.start) / 0.15) : 0;
     return { cue: idx, beat: cue.beat };
