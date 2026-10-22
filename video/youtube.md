@@ -17,7 +17,7 @@ Warranty teams at automotive suppliers are buried in OEM claims and debit notes,
 
 What you'll see:
 - Every claim and debit note checked six ways against the OEM contract, with a dispute drafted when a check fails
-- An early warning agent that links claims to lot, shift and defect code, opens the 8D and flags the lots at risk
+- An early warning agent that links claims to lot, shift and defect code, opens a process improvement work item and flags the lots at risk
 - Chargebacks drafted under the Tier 2 or Tier 3 supplier's contract and tracked through to settlement
 - OEM debit notes matched to approved claims, net cost by product, plant, region and OEM, and what-if tests on the reserve
 - One source of truth for the claim, the contract, the lot and the cost, connected to your ERP, manufacturing, quality and supplier data
@@ -40,10 +40,10 @@ The app screens use illustrative demo data. Claims, amounts, people and supplier
 #WarrantyManagement #AutomotiveSuppliers #AIAgents
 ```
 
-## Tags (428 characters)
+## Tags (431 characters)
 
 ```
-agentic warranty intelligence, warranty management, automotive warranty, warranty claims, warranty claim validation, supplier recovery, supplier chargeback, warranty cost reduction, OEM debit notes, warranty reconciliation, early warning system, 8D problem solving, quality containment, tier 1 automotive supplier, AI agents, agentic AI, warranty analytics, product quality, recall prevention, JD Edwards, Infinite Possibilities
+agentic warranty intelligence, warranty management, automotive warranty, warranty claims, warranty claim validation, supplier recovery, supplier chargeback, warranty cost reduction, OEM debit notes, warranty reconciliation, early warning system, process improvement, quality containment, tier 1 automotive supplier, AI agents, agentic AI, warranty analytics, product quality, recall prevention, warranty ERP, Infinite Possibilities
 ```
 
 ## Other settings

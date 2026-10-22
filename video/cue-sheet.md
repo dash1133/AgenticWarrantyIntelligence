@@ -26,7 +26,7 @@ Runtime 3:01.0. Start times follow the recorded voiceover (vo/alignment.json) wh
 | 1:17.7 | 5.5s | Beat 5 · Claims hub | When a check fails, the dispute agent drafts the challenge with the clause and the history attached. |
 | 1:23.2 | 4.1s | Beat 5 · Claims hub | Your claims analyst reviews it and sends it. |
 | 1:27.3 | 7.3s | Beat 6 · Plant | At the plant, the early warning agent runs around the clock, linking every claim to lot, shift and defect code. |
-| 1:34.6 | 6.0s | Beat 6 · Plant | When a pattern forms, it clusters the failures, opens the 8D and flags the lots at risk. |
+| 1:34.6 | 6.0s | Beat 6 · Plant | When a pattern forms, it clusters the failures, opens a process improvement work item and flags the lots at risk. |
 | 1:40.6 | 4.1s | Beat 6 · Plant | Your quality engineer approves containment. |
 | 1:44.7 | 8.3s | Beat 7 · Procurement | In procurement, where a Tier 2 or Tier 3 part caused the failure, the recovery agent drafts the chargeback under that supplier’s contract. |
 | 1:53.1 | 3.2s | Beat 7 · Procurement | The agent tracks recovery status through to settlement. |

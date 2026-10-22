@@ -44,7 +44,7 @@ In the claims hub, every claim and debit note runs through six checks against th
 
 **BEAT 6**
 
-At the plant, the early warning agent runs around the clock, linking every claim to lot, shift and defect code. When a pattern forms, it clusters the failures, opens the 8D and flags the lots at risk. Your quality engineer approves containment.
+At the plant, the early warning agent runs around the clock, linking every claim to lot, shift and defect code. When a pattern forms, it clusters the failures, opens a process improvement work item and flags the lots at risk. Your quality engineer approves containment.
 
 ---
 

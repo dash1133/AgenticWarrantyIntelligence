@@ -257,7 +257,7 @@
 
           <div style="height: 176px; box-sizing: border-box; display: flex; flex-direction: column; gap: 7px">
             <div style="height: 34px; box-sizing: border-box; background: #216B78; border-radius: 7px; padding: 0 11px; display: flex; align-items: center"><span style="font-size: 12.5px; font-weight: 600; color: #FFFFFF">Traceability &amp; early-warning agent</span></div>
-            <div style="padding: 0 2px"><span style="font-size: 12px; line-height: 1.45; color: #3F4A52">Links every claim to lot, shift and defect code, then clusters the failures and opens the 8D.</span></div>
+            <div style="padding: 0 2px"><span style="font-size: 12px; line-height: 1.45; color: #3F4A52">Links every claim to lot, shift and defect code, then clusters the failures and opens a PI work item.</span></div>
           </div>
 
           <div style="height: 176px; box-sizing: border-box; display: flex; flex-direction: column; gap: 7px">
@@ -465,7 +465,7 @@
           </div>
           <div style="flex: 1 1 auto; min-width: 0; padding-bottom: 6px">
             <div style="font-size: 13px; letter-spacing: 1.3px; font-weight: 700; color: #00756D; margin-bottom: 6px">EARLY WARNING AGENT</div>
-            <div style="font-size: 21px; line-height: 1.35; color: #1A1A1A">Clusters the failures, opens the 8D and flags the lots at risk</div>
+            <div style="font-size: 21px; line-height: 1.35; color: #1A1A1A">Clusters the failures, opens a PI work item and flags the lots at risk</div>
           </div>
         </div>
 
@@ -491,7 +491,7 @@
       <div style="margin-top: auto; display: flex; align-items: center; gap: 10px; flex-wrap: wrap">
         <span style="font-size: 12px; letter-spacing: 1.3px; font-weight: 600; color: #8C8275">RECORDED</span>
         <span style="border: 1.5px dashed #B5A992; color: #5A5247; font-size: 13px; font-weight: 500; padding: 6px 12px; border-radius: 3px">Lot, shift, defect codes</span>
-        <span style="border: 1.5px dashed #B5A992; color: #5A5247; font-size: 13px; font-weight: 500; padding: 6px 12px; border-radius: 3px">At-risk lots, 8D status</span>
+        <span style="border: 1.5px dashed #B5A992; color: #5A5247; font-size: 13px; font-weight: 500; padding: 6px 12px; border-radius: 3px">At-risk lots, PI work item status</span>
       </div>
 
     </div>
@@ -915,14 +915,14 @@
       <div class="big" style="margin-top: 4px">Defect D-41 &middot; shift B &middot; 4 claims in 9 days</div>
       <div class="muted" style="font-size: 13px; margin-top: 2px">Two lots from Plant 2, Line 3, across two OEMs</div>
       <div class="row" style="margin-top: 9px; gap: 8px; flex-wrap: wrap">
-        <span class="chip agent" data-in="8d">8D-0412 opened</span>
+        <span class="chip agent" data-in="8d">PI work item PI-0412 opened</span>
         <span class="chip risk" data-in="lots">L-2407-118 &middot; 2,400 units at risk</span>
         <span class="chip risk" data-in="lots">L-2407-121 &middot; 2,150 units at risk</span>
       </div>
     </div>
     <div class="row" data-in="qa" style="gap: 8px">
       <span class="lbl human" style="margin-right: auto">QUALITY ENGINEER DECIDES</span>
-      <span class="btn btn-g">Open 8D</span>
+      <span class="btn btn-g">Open PI work item</span>
       <span class="stack"><span id="f6-appr" class="btn btn-h" data-out="appr">Approve containment</span><span class="btn btn-ok" data-in="appr">&#10003; Lots contained &middot; plant alerted</span></span>
     </div>
   </div>
@@ -935,7 +935,7 @@
   <div class="app-bar"><span class="app-logo">AW</span><span class="app-name">Warranty Intelligence</span><span class="app-mod">Procurement &middot; Recovery</span><span class="app-demo">DEMO DATA</span><span class="app-user"><span class="app-av">AN</span>A. Novak &middot; Purchasing lead</span></div>
   <div class="app-body">
     <div class="card">
-      <div class="lbl">8D-0412 &middot; ROOT CAUSE CONFIRMED</div>
+      <div class="lbl">PI-0412 &middot; ROOT CAUSE CONFIRMED</div>
       <div class="big" style="margin-top: 3px">Seal compound out of spec from a Tier 2 supplier</div>
       <div class="muted" style="font-size: 12.5px; margin-top: 2px">4 claims &middot; Ford, GM &middot; lots L-2407-118, L-2407-121</div>
     </div>
@@ -947,7 +947,7 @@
       <div class="row" style="justify-content: space-between"><span class="lbl agent">RECOVERY AGENT &middot; CHARGEBACK CB-0931</span><span style="font-size: 19px; font-weight: 700">$38,420.00</span></div>
       <div style="font-size: 14.5px; margin-top: 3px">To Kessler Dichtungstechnik GmbH, under supply agreement KDT-SA-2021, cl. 9.2</div>
       <div class="row" data-in="cb1" style="margin-top: 8px; gap: 8px">
-        <span class="chip">4 claims attached</span><span class="chip">8D-0412 report</span><span class="chip">Clause 9.2 pass-through</span>
+        <span class="chip">4 claims attached</span><span class="chip">PI-0412 work item</span><span class="chip">Clause 9.2 pass-through</span>
       </div>
     </div>
     <div class="card rise" data-in="trk" style="background: #FFFFFF; padding-bottom: 12px">
@@ -997,7 +997,7 @@
       </div>
       <div class="row" data-in="pa" style="gap: 8px">
         <span class="lbl human" style="margin-right: auto">CONTROLLER APPROVES</span>
-        <span class="stack"><span id="f8-post" class="btn btn-h" data-out="post">Post to JD Edwards</span><span class="btn btn-ok" data-in="post">&#10003; Posted &middot; JE-24-11873</span></span>
+        <span class="stack"><span id="f8-post" class="btn btn-h" data-out="post">Post to ERP</span><span class="btn btn-ok" data-in="post">&#10003; Posted &middot; JE-24-11873</span></span>
       </div>
     </div>
     <div data-in="vB" style="display: flex; flex-direction: column; gap: 10px">
@@ -1040,7 +1040,7 @@
       <div style="text-align: right"><div class="lbl human">CLAIMS ANALYST</div><div class="stack" style="margin-top: 5px; justify-items: end"><span class="chip" data-out="gate">Ready</span><span class="chip risk" data-in="gate">&#9679; Held for decision</span></div></div>
     </div>
     <div class="card rise row" data-in="q2" style="background: #FFFFFF; justify-content: space-between">
-      <div><div class="lbl agent">EARLY WARNING AGENT PREPARED</div><div style="font-size: 15px; font-weight: 600; margin-top: 2px">Contain lots L-2407-118 and L-2407-121</div><div class="muted" style="font-size: 12.5px">4,550 units &middot; 8D-0412</div></div>
+      <div><div class="lbl agent">EARLY WARNING AGENT PREPARED</div><div style="font-size: 15px; font-weight: 600; margin-top: 2px">Contain lots L-2407-118 and L-2407-121</div><div class="muted" style="font-size: 12.5px">4,550 units &middot; PI-0412</div></div>
       <div style="text-align: right"><div class="lbl human">QUALITY ENGINEER</div><div class="stack" style="margin-top: 5px; justify-items: end"><span class="chip" data-out="gate">Ready</span><span class="chip risk" data-in="gate">&#9679; Held for decision</span></div></div>
     </div>
     <div class="card rise row" data-in="q3" style="background: #FFFFFF; justify-content: space-between">
@@ -1048,7 +1048,7 @@
       <div style="text-align: right"><div class="lbl human">PURCHASING LEAD</div><div class="stack" style="margin-top: 5px; justify-items: end"><span class="chip" data-out="gate">Ready</span><span class="chip risk" data-in="gate">&#9679; Held for decision</span></div></div>
     </div>
     <div class="card rise row" data-in="q4" style="background: #FFFFFF; justify-content: space-between">
-      <div><div class="lbl agent">RECONCILIATION AGENT PREPARED</div><div style="font-size: 15px; font-weight: 600; margin-top: 2px">Post adjustment DN-30417</div><div class="muted" style="font-size: 12.5px">+$1,135 &middot; JD Edwards</div></div>
+      <div><div class="lbl agent">RECONCILIATION AGENT PREPARED</div><div style="font-size: 15px; font-weight: 600; margin-top: 2px">Post adjustment DN-30417</div><div class="muted" style="font-size: 12.5px">+$1,135 &middot; ERP</div></div>
       <div style="text-align: right"><div class="lbl human">CONTROLLER</div><div class="stack" style="margin-top: 5px; justify-items: end"><span class="chip" data-out="gate">Ready</span><span class="chip risk" data-in="gate">&#9679; Held for decision</span></div></div>
     </div>
     <div class="row muted" data-in="log" style="font-size: 13px; margin-top: auto"><span class="live" style="background: #E4B44C; box-shadow: 0 0 0 4px rgba(228,180,76,.2)"></span>Every decision is logged to the warranty record, with the evidence behind it.</div>
@@ -1131,7 +1131,7 @@
     { label: 'Beat 6 · Plant', layer: 'f6', cues: [
       { text: 'At the plant, the early warning agent runs around the clock, linking every claim to lot, shift and defect code.',
         in: [[1, 0], ['r1', .25], ['r2', .37], ['r3', .49], ['r4', .61], ['r5', .73], ['r6', .85]] },
-      { text: 'When a pattern forms, it clusters the failures, opens the 8D and flags the lots at risk.',
+      { text: 'When a pattern forms, it clusters the failures, opens a process improvement work item and flags the lots at risk.',
         in: [[2, 0], ['cl', .05], ['pc', .3], ['8d', .55], ['lots', .78]] },
       { text: 'Your quality engineer approves containment.', hold: 1,
         in: [[3, 0], ['qa', 0], ['appr', .75]] }
@@ -1373,7 +1373,7 @@
   {
    "cue": 21,
    "beat": "Beat 6 \u00b7 Plant",
-   "text": "When a pattern forms, it clusters the failures, opens the 8D and flags the lots at risk.",
+   "text": "When a pattern forms, it clusters the failures, opens a process improvement work item and flags the lots at risk.",
    "start": 86.99,
    "end": 92.567,
    "ratio": 0.99,
