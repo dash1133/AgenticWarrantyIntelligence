@@ -5,6 +5,7 @@ Timed to the voiceover script, with the voiceover lines as captions. These are r
 | File | What it is |
 | --- | --- |
 | `awi-video.html` | The video. Open it in a browser and press space to play. Arrow keys jump between beats, C turns captions on and off, H hides the controls. |
+| `voiceover.md` | The voiceover script, as the video plays it. |
 | `cue-sheet.md` | Start time and length of every voiceover line. Use it to pace the recording. |
 | `player.template.html` | Edit beats 1 to 3 and 10, the script and the timing here. |
 | `source/` | The two pages behind beats 4 to 9: the system overview and the frames page. |

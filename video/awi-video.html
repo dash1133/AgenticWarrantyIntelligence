@@ -115,9 +115,6 @@
       <div data-in="2" style="font-size: 12px; letter-spacing: .14em; font-weight: 600; color: #7A8690; margin-bottom: 6px">WHAT THE TEAM FACES</div>
       <div data-in="2" class="rise" style="display: flex; align-items: center; gap: 14px; padding: 11px 0; border-bottom: 1px solid #DED7C8"><span style="flex: 0 0 10px; height: 10px; border-radius: 50%; background: #C2521C"></span><span style="font-size: 20px">The queue is bigger than the hours</span></div>
       <div data-in="3" class="rise" style="display: flex; align-items: center; gap: 14px; padding: 11px 0; border-bottom: 1px solid #DED7C8"><span style="flex: 0 0 10px; height: 10px; border-radius: 50%; background: #C2521C"></span><span style="font-size: 20px">Validating inputs takes more time than research</span></div>
-      <div data-in="4" class="rise" style="display: flex; align-items: center; gap: 14px; padding: 11px 0; border-bottom: 1px solid #DED7C8"><span style="flex: 0 0 10px; height: 10px; border-radius: 50%; background: #C2521C"></span><span style="font-size: 20px">Deadlines are missed</span></div>
-      <div data-in="5" class="rise" style="display: flex; align-items: center; gap: 14px; padding: 11px 0; border-bottom: 1px solid #DED7C8"><span style="flex: 0 0 10px; height: 10px; border-radius: 50%; background: #C2521C"></span><span style="font-size: 20px">Cases take too long to resolve</span></div>
-      <div data-in="6" class="rise" style="display: flex; align-items: center; gap: 14px; padding: 11px 0; border-bottom: 1px solid #DED7C8"><span style="flex: 0 0 10px; height: 10px; border-radius: 50%; background: #C2521C"></span><span style="font-size: 20px">Appeals are lost</span></div>
       <div data-in="7" class="rise" style="display: flex; align-items: center; gap: 14px; padding: 11px 0"><span style="flex: 0 0 10px; height: 10px; border-radius: 50%; background: #C2521C"></span><span style="font-size: 20px">Invalid claims go uncontested</span></div>
     </div>
     <div style="display: flex; flex-direction: column; min-width: 0">
@@ -176,8 +173,8 @@
     </div>
   </div>
   <div style="display: flex; flex-direction: column; gap: 6px">
-    <span data-in="9" class="rise" style="font-size: 40px; line-height: 1.2; font-weight: 700; letter-spacing: -.01em">Reporting on a problem</span>
-    <span data-in="10" class="rise" style="font-size: 40px; line-height: 1.2; font-weight: 700; letter-spacing: -.01em; color: #C2521C">is not the same as fixing it.</span>
+    <span data-in="9" class="rise" style="font-size: 40px; line-height: 1.2; font-weight: 700; letter-spacing: -.01em">Reporting a problem</span>
+    <span data-in="10" class="rise" style="font-size: 40px; line-height: 1.2; font-weight: 700; letter-spacing: -.01em; color: #C2521C">is not fixing it.</span>
   </div>
 </div>
 </div>
@@ -187,7 +184,7 @@
 <div style="width: 1280px; height: 720px; background: #15232F; color: #FFFFFF; padding: 0 96px 90px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center">
   <div data-in="1" class="rise" style="font-size: 14px; letter-spacing: .2em; font-weight: 600; color: #E4B44C">INTRODUCING</div>
   <div data-in="1" class="rise" style="margin-top: 16px; font-size: 68px; line-height: 1.08; font-weight: 700; letter-spacing: -.02em">Agentic Warranty Intelligence</div>
-  <div data-in="2" class="rise" style="margin-top: 22px; font-size: 25px; line-height: 1.4; color: #DCE6EB">Reimagining how warranty claims are handled, using AI</div>
+  <div data-in="2" class="rise" style="margin-top: 22px; font-size: 25px; line-height: 1.4; color: #DCE6EB">Reimagining how warranty claims get processed, using AI</div>
   <div data-in="3" class="rise" style="margin-top: 44px; display: flex; gap: 12px">
     <span style="border: 1px solid #3C5162; border-radius: 6px; padding: 9px 16px; font-size: 15px; font-weight: 500; color: #DCE6EB">Claims hub</span>
     <span style="border: 1px solid #3C5162; border-radius: 6px; padding: 9px 16px; font-size: 15px; font-weight: 500; color: #DCE6EB">Plant</span>
@@ -1072,12 +1069,8 @@
       { text: 'Your warranty team is overwhelmed.', in: [[1, 0]] },
       { text: 'The queue is bigger than the hours.', in: [[2, 0]] },
       { text: 'Validating inputs takes more time than researching claims.', in: [[3, 0]] },
-      { text: 'Deadlines are missed.', in: [[4, 0]] },
-      { text: 'Cases take too long to resolve.', in: [[5, 0]] },
-      { text: 'Appeals are lost.', in: [[6, 0]] },
       { text: 'Invalid claims go uncontested.', in: [[7, 0]] },
-      { text: 'And this has a huge impact.', in: [[8, 0]] },
-      { text: 'Warranty costs increase.', in: [[9, 0]] },
+      { text: 'Warranty costs increase.', in: [[8, 0], [9, .15]] },
       { text: 'Supplier recovery is missed.', in: [[10, 0]] },
       { text: 'Recalls arrive without warning.', in: [[11, 0]] },
       { text: 'Negotiation leverage is lost.', in: [[12, 0]] }
@@ -1085,12 +1078,12 @@
     { label: 'Beat 2 · Reporting is not fixing', layer: 'b2', cues: [
       { text: 'Warranty systems report all of them.', dur: 3.2,
         in: [[1, 0], [2, .15], [3, .27], [4, .39], [5, .51], [6, .63], [7, .75]] },
-      { text: 'Reporting on a problem is not the same as fixing it.', hold: 1,
+      { text: 'Reporting a problem is not fixing it.', hold: 1,
         in: [[9, 0], [10, .35], [8, .55]] }
     ]},
     { label: 'Beat 3 · Introducing', layer: 'b3', cues: [
       { text: 'Introducing Agentic Warranty Intelligence.', hold: .6, in: [[1, 0]] },
-      { text: 'We are reimagining how warranty claims are handled using AI.', hold: .6,
+      { text: 'We are reimagining how warranty claims get processed using AI.', hold: .6,
         in: [[2, 0], [3, .6]] }
     ]},
     { label: 'Beat 4 \u00b7 The agent swarm', layer: 'ov', cues: [
@@ -1148,8 +1141,8 @@
       { text: 'Your people make the call.', hold: 1.8, in: [[6, 0], ['log', .3]] }
     ]},
     { label: 'Beat 10 · Close', layer: 'ov', cues: [
-      { text: 'We will build the warranty system to your specification.', lits: [[0, 'all']] },
-      { text: 'It will be deployed in your environment and connected to your ERP, manufacturing, quality and supplier data sources.',
+      { text: 'We build the warranty system to your specifications.', lits: [[0, 'all']] },
+      { text: 'It is deployed in your environment and connected to your ERP, manufacturing, quality and supplier data sources.',
         lits: [[0, ['record', 'connectors']]] },
       { layer: 'b10', text: 'Reduce recalls. Reduce warranty costs. Increase supplier recovery. Improve product quality.', hold: 1.6,
         in: [[1, 0], [2, .25], [3, .5], [4, .75]] },
