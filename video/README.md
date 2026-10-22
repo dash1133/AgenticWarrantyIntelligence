@@ -15,6 +15,9 @@ Timed to the voiceover script, with the voiceover lines as captions. These are r
 
 ## Beat map
 
+The video opens on a 3.4-second cover: `logo.svg` and the product name. `cover.png` is the same frame, embedded as the MP4 thumbnail.
+
+
 | Beat | Screen |
 | --- | --- |
 | 1 | The team's six problems, then four impact cards with sourced figures |
@@ -34,7 +37,7 @@ The recorded read is `vo/voiceover.mp3`. `vo/align.py` matches each line to it u
     python3 music/score.py
     python3 vo/mix.py               # out/final-mix.wav
     node render.cjs --no-captions   # out/awi-video-clean.mp4
-    ffmpeg -i out/awi-video-clean.mp4 -i out/final-mix.wav -map 0:v -map 1:a -c:v copy -c:a aac -b:a 192k -shortest out/awi-video-final.mp4
+    ffmpeg -i out/awi-video-clean.mp4 -i out/final-mix.wav -i cover.png -map 0:v -map 1:a -map 2:v -c:v:0 copy -c:v:1 png -disposition:v:1 attached_pic -c:a aac -b:a 192k -t <video length> out/awi-video-final.mp4
 
 For a new recording, replace `vo/voiceover.mp3`, run `python3 vo/align.py`, then the steps above.
 

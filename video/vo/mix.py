@@ -27,6 +27,8 @@ src = np.frombuffer(raw, dtype="<f4").astype(np.float64)
 out = np.zeros(int((sched["duration"] + 1.0) * SR))
 fade = int(0.008 * SR)
 for c in sched["cues"]:
+    if not c.get("src"):
+        continue
     a, b = c["src"]
     seg = src[int(a * SR):int(b * SR)].copy()
     ramp = np.linspace(0, 1, fade)

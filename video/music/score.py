@@ -29,12 +29,8 @@ R = np.zeros(N)
 rng = np.random.default_rng(7)
 
 
-def bar_at(t):
-    """Section changes land on the nearest bar line, so the music stays on grid."""
-    return round(t / BAR) * BAR
-
-
-S = {k: bar_at(v) for k, v in starts.items()}
+# Each section starts exactly on its beat, so changes land on the voiceover.
+S = dict(starts)
 S["End"] = DUR
 
 
@@ -190,9 +186,11 @@ def grid(t0, t1, step):
 # ----------------------------------------------------------------------------
 # The arc
 # ----------------------------------------------------------------------------
+cover = chords_over(["D"], 0.0, S["Beat 1"], 2, 1500, 0.8)       # a soft open under the cover
+pluck(CH["D"][0][1] + 12, 0.15, 1.4, 0.06, 0, 0.15)
 p_end = S["Beat 3"]
-problem = chords_over(["Bm", "G", "Em", "F#"], 0.0, p_end, 2, 900, 1.0)
-for t in grid(0.0, p_end, BEAT):
+problem = chords_over(["Bm", "G", "Em", "F#"], S["Beat 1"], p_end, 2, 900, 1.0)
+for t in grid(S["Beat 1"], p_end, BEAT):
     tick(t, 0.05)                                            # the clock: more queue than hours
 for t in grid(S["Beat 2"], p_end, BEAT * 2):
     bass(CH["Bm"][1] if t < p_end - 2 * BAR else CH["F#"][1], t, BEAT * 1.8, 0.16)
@@ -255,7 +253,7 @@ def reverb(x, seed):
 
 
 # Section loudness: quiet under the problem, lift on the reveal, drop under beat 9.
-LEVELS = [("Beat 1", -5), ("Beat 3", 0), ("Beat 4", -2.5), ("Transition", -1.5), ("Beat 5", 0),
+LEVELS = [("Cover", -6), ("Beat 1", -5), ("Beat 3", 0), ("Beat 4", -2.5), ("Transition", -1.5), ("Beat 5", 0),
           ("Beat 9", -6), ("Beat 10", 0)]
 curve = np.zeros(N)
 for i, (sec, db) in enumerate(LEVELS):

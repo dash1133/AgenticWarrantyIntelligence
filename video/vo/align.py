@@ -14,7 +14,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 SRC = HERE / "voiceover.mp3"
-cues = json.loads((HERE / "cues.json").read_text())
+cues = [c for c in json.loads((HERE / "cues.json").read_text()) if c["text"]]
 
 out = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(SRC), "-af", "silencedetect=noise=-38dB:d=0.12",
                       "-f", "null", "-"], capture_output=True, text=True).stderr
