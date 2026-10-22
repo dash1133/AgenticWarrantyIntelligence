@@ -28,6 +28,10 @@ const stillsOnly = args.includes('--stills');
     '| Start | Length | Beat | Line |', '| --- | --- | --- | --- |',
     ...cues.map(c => `| ${fmt(c.start)} | ${c.dur.toFixed(1)}s | ${c.beat} | ${c.text} |`), ''];
   fs.writeFileSync(path.join(__dirname, 'cue-sheet.md'), sheet.join('\n'));
+  // Beat start times, for music/score.py.
+  const beats = {};
+  cues.forEach(c => { if (!(c.beat in beats)) beats[c.beat] = c.start; });
+  fs.writeFileSync(path.join(__dirname, 'music', 'timeline.json'), JSON.stringify({ duration, beats }, null, 2));
 
   if (stillsOnly) {
     const dir = path.join(outDir, 'stills');

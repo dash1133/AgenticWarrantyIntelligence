@@ -10,6 +10,7 @@ Timed to the voiceover script, with the voiceover lines as captions. These are r
 | `player.template.html` | Edit beats 1 to 3 and 10, the script and the timing here. |
 | `source/` | The two pages behind beats 4 to 9: the system overview and the frames page. |
 | `build.py` | Run `python3 build.py` after any edit to rebuild `awi-video.html`. |
+| `music/score.py` | Original temp score, synthesised from scratch, so no licence is needed. Run `python3 music/score.py` after `node render.cjs` so the music follows any retiming. |
 | `render.cjs` | Run `node render.cjs` to export `out/awi-video.mp4`. Add `--no-captions` for a clean cut, or `--stills` for one image per line. |
 
 ## Beat map
@@ -42,3 +43,11 @@ Industry figures, not client results. Check each before the pitch, or swap in th
 | Beat 10 | 5-10% warranty cost cut expected by 58% of surveyed leaders | [McKinsey](https://www.mckinsey.com/industries/automotive-and-assembly/our-insights/when-warranty-costs-rival-r-and-d-spend-remaking-vehicle-quality-with-ai) |
 | Beat 10 | 95% of Bolt recall cost recovered ($1.9B of $2.0B) | GM filings, as above |
 | Beat 10 | 18% of automakers use AI in production to predict quality issues | McKinsey, as above |
+
+## Music
+
+`music/score.py` writes `music/score.wav`, an original temp score timed to the beats: B minor tension under the problem, a lift into D major on the reveal, a pulse that builds through the walkthrough, a drop under beat 9 and a full close at 100 BPM. To preview it with the picture:
+
+    ffmpeg -i out/awi-video.mp4 -i music/score.wav -filter_complex "[1:a]loudnorm=I=-18[a]" -map 0:v -map "[a]" -c:v copy -c:a aac -shortest out/awi-video-music.mp4
+
+Under the voiceover, sit the music about 15 dB below the voice (voice near -16 LUFS, music near -31 LUFS), or duck it to that level only while the voice speaks.
