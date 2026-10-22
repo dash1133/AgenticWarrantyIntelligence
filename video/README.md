@@ -19,9 +19,9 @@ Timed to the voiceover script, with the voiceover lines as captions. These are r
 | 2 | A warranty system report: every issue reported, none fixed |
 | 3 | Title card |
 | 4 | System overview, lit section by section: agents, roles, then the source of truth |
-| 5 to 9 | Frames page: claims hub, plant, procurement, finance, who decides |
+| 5 to 9 | Frames page steps on the left; animated app screens on the right (claims hub, plant, procurement, finance, decisions) |
 | 10 | Overview, all lit, then data sources lit; four outcome tiles; ask for a demo |
 
 ## After the voiceover is recorded
 
-Timing comes from a word-count estimate. To lock a line to the real read, set `dur` (in seconds) on its cue in the `BEATS` list in `player.template.html`, then rebuild and re-export. The APP CAPTURE boxes in beats 5 to 9 are still placeholders for screen recordings.
+Timing comes from a word-count estimate. To lock a line to the real read, set `dur` (in seconds) on its cue in the `BEATS` list in `player.template.html`, then rebuild and re-export. The app screens in beats 5 to 9 are templates (`app-f5` to `app-f9`) in `player.template.html`. Their animation keys are scheduled in the same `BEATS` list. The app data is demo data: real OEM names, invented claims, amounts, people and suppliers.

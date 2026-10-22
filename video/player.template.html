@@ -37,6 +37,68 @@
   #time { font-variant-numeric: tabular-nums; color: #9A9A9A; min-width: 104px; }
   #beat { font-weight: 600; color: #FFFFFF; min-width: 210px; }
   #keys { color: #6E6E6E; }
+
+  /* Beats 5 to 9: narrower step column so the app panel gets about 60% of the frame. */
+  section.frame div[style*="font-size: 21px"], section.frame div[style*="font-size: 20px"] { font-size: 18px !important; }
+
+  /* App mock (right-hand panel of beats 5 to 9). */
+  .stack { display: grid; }
+  .stack > * { grid-area: 1 / 1; }
+  .app { flex: 1 1 auto; min-width: 0; position: relative; background: #FFFFFF; border: 1px solid #DDD3C2;
+    border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; color: #1A1A1A; font-size: 14px;
+    box-shadow: 0 6px 18px rgba(60, 45, 20, .08); }
+  .app-bar { flex: 0 0 44px; background: #15232F; display: flex; align-items: center; gap: 11px; padding: 0 14px; color: #FFFFFF; }
+  .app-logo { width: 22px; height: 22px; border-radius: 5px; background: #E4B44C; color: #15232F;
+    font-size: 10.5px; font-weight: 700; display: grid; place-items: center; }
+  .app-name { font-size: 13px; font-weight: 600; }
+  .app-mod { font-size: 12.5px; color: #A9BBC6; border-left: 1px solid #3C5162; padding-left: 11px; }
+  .app-demo { margin-left: auto; font-size: 9.5px; letter-spacing: .12em; font-weight: 600; color: #6F8392;
+    border: 1px solid #3C5162; border-radius: 3px; padding: 2px 5px; }
+  .app-user { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #DCE6EB; }
+  .app-av { width: 24px; height: 24px; border-radius: 50%; background: #C4430F; color: #FFFFFF;
+    font-size: 10px; font-weight: 700; display: grid; place-items: center; }
+  .app-body { flex: 1 1 auto; min-height: 0; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px; }
+  .lbl { font-size: 11px; letter-spacing: .11em; font-weight: 600; color: #7A8690; }
+  .lbl.agent { color: #00756D; }
+  .lbl.human { color: #B83D10; }
+  .card { border: 1px solid #E7E0D3; border-radius: 8px; padding: 10px 12px; background: #FCFAF6; }
+  .row { display: flex; align-items: center; gap: 10px; }
+  .muted { color: #6B6257; }
+  .big { font-size: 17px; font-weight: 600; }
+  .chk { display: grid; grid-template-columns: 20px 118px 1fr; align-items: center; gap: 10px;
+    padding: 0 12px; height: 35px; border-bottom: 1px solid #F0EBE1; font-size: 14px; }
+  .chk:last-child { border-bottom: 0; }
+  .ico { width: 20px; height: 20px; }
+  .ico > span { width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; font-size: 11px; font-weight: 700; }
+  .i-wait { border: 2px solid #D6CFC2; }
+  .i-pass { background: #00A89D; color: #04221F; }
+  .i-fail { background: #C4430F; color: #FFFFFF; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; border-radius: 6px;
+    padding: 8px 14px; font-size: 13.5px; font-weight: 600; white-space: nowrap; }
+  .btn-h { background: #C4430F; color: #FFFFFF; }
+  .btn-g { background: #F1ECE2; color: #4A4238; }
+  .btn-ok { background: #E1F3F1; color: #00756D; }
+  .chip { display: inline-flex; align-items: center; gap: 6px; border: 1px solid #DDD3C2; border-radius: 5px;
+    padding: 4px 9px; font-size: 12px; color: #4A4238; background: #FFFFFF; white-space: nowrap; }
+  .chip.agent { border-color: #9FD8D3; color: #00756D; background: #F0FAF9; }
+  .chip.risk { border-color: #EBC2AE; color: #B83D10; background: #FFF6F1; }
+  .pill-fail { font-size: 12px; font-weight: 600; color: #FFFFFF; background: #C4430F; border-radius: 10px; padding: 2px 9px; }
+  .tbl { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  .tbl th { font-size: 10.5px; letter-spacing: .1em; color: #7A8690; font-weight: 600; text-align: left;
+    padding: 7px 10px; border-bottom: 1px solid #E7E0D3; background: #FAF7F1; }
+  .tbl td { padding: 0 10px; height: 31px; border-bottom: 1px solid #F0EBE1; }
+  .tbl tr:last-child td { border-bottom: 0; }
+  .num { text-align: right !important; font-variant-numeric: tabular-nums; }
+  .live { width: 9px; height: 9px; border-radius: 50%; background: #00A89D; box-shadow: 0 0 0 4px rgba(0, 168, 157, .18); }
+  .track { height: 10px; background: #EEE8DD; border-radius: 5px; overflow: hidden; }
+  .fill { height: 100%; width: 0; background: #00A89D; border-radius: 5px; }
+  .barrow { display: grid; grid-template-columns: 140px 1fr 64px; align-items: center; gap: 12px; font-size: 13.5px; height: 28px; }
+  .stage-dot { width: 14px; height: 14px; border-radius: 50%; border: 2px solid #D6CFC2; background: #FFFFFF; }
+  .stage-dot.on { border-color: #00A89D; background: #00A89D; }
+  .cursor { position: absolute; left: 0; top: 0; z-index: 30; width: 0; height: 0; opacity: 0; pointer-events: none; }
+  .cursor svg { position: absolute; left: -2px; top: -2px; filter: drop-shadow(0 2px 2px rgba(0,0,0,.25)); }
+  .cursor .ring { position: absolute; left: -16px; top: -16px; width: 32px; height: 32px; border-radius: 50%;
+    border: 2.5px solid #C4430F; opacity: 0; }
 </style>
 </head>
 <body>
@@ -139,6 +201,221 @@
 <div id="cc"><span></span></div>
 </div></div>
 
+<!-- ========================================================================
+     APP SCREENS for beats 5 to 9. Each replaces the frame's APP CAPTURE box.
+     data-in / data-out = key that fades it in / out (keys are scheduled in BEATS)
+     data-hl = key that tints its background, data-grow = key that grows its width to data-w
+     data-count = key that counts up to data-to, .cursor data-cursor = "key>#target, ..."
+     ======================================================================== -->
+
+<template id="app-f5">
+<div class="app">
+  <div class="app-bar"><span class="app-logo">AW</span><span class="app-name">Warranty Intelligence</span><span class="app-mod">Claims hub</span><span class="app-demo">DEMO DATA</span><span class="app-user"><span class="app-av">JP</span>J. Patel &middot; Claims analyst</span></div>
+  <div class="app-body">
+    <div class="card row" style="justify-content: space-between">
+      <div>
+        <div class="lbl">CLAIM WC-24-018734 &middot; DEBIT NOTE DN-55120</div>
+        <div class="big" style="margin-top: 3px">Ford Motor Company &middot; Brake caliper BC-2210</div>
+        <div class="muted" style="font-size: 12.5px; margin-top: 2px">VIN 1FTFW1E58PFA41207 &middot; F-150 &middot; 41 months in service</div>
+      </div>
+      <div style="text-align: right"><div class="lbl">CLAIMED</div><div style="font-size: 21px; font-weight: 700; margin-top: 2px">$4,860.00</div></div>
+    </div>
+    <div class="row" style="justify-content: space-between; height: 20px">
+      <span class="lbl agent">VALIDATION AGENT &middot; SIX CHECKS AGAINST CONTRACT FMC-WA-2023</span>
+      <span class="pill-fail" data-in="fail">2 failed</span>
+    </div>
+    <div style="border: 1px solid #E7E0D3; border-radius: 8px; overflow: hidden">
+      <div class="chk"><span class="ico stack"><span class="i-wait" data-out="k1"></span><span class="i-pass" data-in="k1">&#10003;</span></span><b style="font-weight: 600">VIN</b><span class="muted" data-in="k1">Matches build record, Dearborn Truck Plant</span></div>
+      <div class="chk"><span class="ico stack"><span class="i-wait" data-out="k2"></span><span class="i-pass" data-in="k2">&#10003;</span></span><b style="font-weight: 600">Duplicate</b><span class="muted" data-in="k2">No prior claim on this VIN and part</span></div>
+      <div class="chk" data-hl="k3"><span class="ico stack"><span class="i-wait" data-out="k3"></span><span class="i-fail" data-in="k3">&#10005;</span></span><b style="font-weight: 600">Coverage</b><span data-in="k3" style="color: #B83D10">41 months in service; coverage ends at 36</span></div>
+      <div class="chk" data-hl="k4"><span class="ico stack"><span class="i-wait" data-out="k4"></span><span class="i-fail" data-in="k4">&#10005;</span></span><b style="font-weight: 600">Contract terms</b><span data-in="k4" style="color: #B83D10">Labor 3.2 h claimed; 1.8 h allowed (cl. 7.4)</span></div>
+      <div class="chk"><span class="ico stack"><span class="i-wait" data-out="k5"></span><span class="i-pass" data-in="k5">&#10003;</span></span><b style="font-weight: 600">Part of record</b><span class="muted" data-in="k5">BC-2210 is supplied to this program</span></div>
+      <div class="chk"><span class="ico stack"><span class="i-wait" data-out="k6"></span><span class="i-pass" data-in="k6">&#10003;</span></span><b style="font-weight: 600">Evidence</b><span class="muted" data-in="k6">Photos and teardown report on file</span></div>
+    </div>
+    <div class="card rise" data-in="d" style="border-color: #EBCDBD; background: #FFF8F3">
+      <div class="row" style="justify-content: space-between"><span class="lbl agent">DISPUTE AGENT &middot; DRAFT CHALLENGE</span><span class="muted" style="font-size: 12px">To: Ford Global Warranty</span></div>
+      <div style="font-size: 14.5px; line-height: 1.4; margin-top: 6px">Claim challenged: vehicle is outside the 36-month coverage (cl. 3.1), and 3.2 labor hours exceed the 1.8 allowed (cl. 7.4).</div>
+      <div class="row" style="margin-top: 8px; gap: 8px">
+        <span class="chip" data-in="d1">Contract cl. 3.1, 7.4</span>
+        <span class="chip" data-in="d2">Claim history &middot; 2 prior</span>
+        <span class="chip" data-in="d3">Build record</span>
+      </div>
+      <div class="row" data-in="db" style="margin-top: 10px; gap: 8px">
+        <span class="lbl human" style="margin-right: auto">CLAIMS ANALYST REVIEWS AND SENDS</span>
+        <span class="btn btn-g">Edit</span>
+        <span class="stack"><span id="f5-send" class="btn btn-h" data-out="send">Send dispute</span><span class="btn btn-ok" data-in="send">&#10003; Sent to Ford</span></span>
+      </div>
+    </div>
+  </div>
+  <div class="cursor" data-cursor="send>#f5-send"><span class="ring"></span><svg width="22" height="24" viewBox="0 0 22 24"><path d="M2 2 L2 19 L7 14.5 L10.5 22 L13.5 20.6 L10 13.2 L17 13 Z" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+</div>
+</template>
+
+<template id="app-f6">
+<div class="app">
+  <div class="app-bar"><span class="app-logo">AW</span><span class="app-name">Warranty Intelligence</span><span class="app-mod">Plant &middot; Early warning</span><span class="app-demo">DEMO DATA</span><span class="app-user"><span class="app-av">RC</span>R. Chen &middot; Quality engineer</span></div>
+  <div class="app-body">
+    <div class="row" style="justify-content: space-between; height: 22px">
+      <span class="row" style="gap: 10px"><span class="live"></span><span class="lbl agent">EARLY WARNING AGENT &middot; RUNNING 24/7</span></span>
+      <span class="muted" style="font-size: 12.5px">Claims linked to production records</span>
+    </div>
+    <div style="border: 1px solid #E7E0D3; border-radius: 8px; overflow: hidden">
+      <table class="tbl">
+        <tr><th>CLAIM</th><th>OEM</th><th>LOT</th><th>SHIFT</th><th>DEFECT CODE</th></tr>
+        <tr data-in="r1" data-hl="cl"><td>WC-018734</td><td>Ford</td><td>L-2407-118</td><td>B</td><td>D-41 seal leak</td></tr>
+        <tr data-in="r2" data-hl="cl"><td>WC-018802</td><td>GM</td><td>L-2407-121</td><td>B</td><td>D-41 seal leak</td></tr>
+        <tr data-in="r3"><td>WC-018815</td><td>Stellantis</td><td>L-2406-097</td><td>A</td><td>D-12 bore finish</td></tr>
+        <tr data-in="r4" data-hl="cl"><td>WC-018840</td><td>Ford</td><td>L-2407-118</td><td>B</td><td>D-41 seal leak</td></tr>
+        <tr data-in="r5"><td>WC-018857</td><td>Toyota</td><td>L-2405-063</td><td>C</td><td>D-07 connector</td></tr>
+        <tr data-in="r6" data-hl="cl"><td>WC-018861</td><td>GM</td><td>L-2407-121</td><td>B</td><td>D-41 seal leak</td></tr>
+      </table>
+    </div>
+    <div class="card rise" data-in="pc" style="border-color: #EBCDBD; background: #FFF8F3">
+      <div class="lbl agent">PATTERN DETECTED</div>
+      <div class="big" style="margin-top: 4px">Defect D-41 &middot; shift B &middot; 4 claims in 9 days</div>
+      <div class="muted" style="font-size: 13px; margin-top: 2px">Two lots from Plant 2, Line 3, across two OEMs</div>
+      <div class="row" style="margin-top: 9px; gap: 8px; flex-wrap: wrap">
+        <span class="chip agent" data-in="8d">8D-0412 opened</span>
+        <span class="chip risk" data-in="lots">L-2407-118 &middot; 2,400 units at risk</span>
+        <span class="chip risk" data-in="lots">L-2407-121 &middot; 2,150 units at risk</span>
+      </div>
+    </div>
+    <div class="row" data-in="qa" style="gap: 8px">
+      <span class="lbl human" style="margin-right: auto">QUALITY ENGINEER DECIDES</span>
+      <span class="btn btn-g">Open 8D</span>
+      <span class="stack"><span id="f6-appr" class="btn btn-h" data-out="appr">Approve containment</span><span class="btn btn-ok" data-in="appr">&#10003; Lots contained &middot; plant alerted</span></span>
+    </div>
+  </div>
+  <div class="cursor" data-cursor="appr>#f6-appr"><span class="ring"></span><svg width="22" height="24" viewBox="0 0 22 24"><path d="M2 2 L2 19 L7 14.5 L10.5 22 L13.5 20.6 L10 13.2 L17 13 Z" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+</div>
+</template>
+
+<template id="app-f7">
+<div class="app">
+  <div class="app-bar"><span class="app-logo">AW</span><span class="app-name">Warranty Intelligence</span><span class="app-mod">Procurement &middot; Recovery</span><span class="app-demo">DEMO DATA</span><span class="app-user"><span class="app-av">AN</span>A. Novak &middot; Purchasing lead</span></div>
+  <div class="app-body">
+    <div class="card">
+      <div class="lbl">8D-0412 &middot; ROOT CAUSE CONFIRMED</div>
+      <div class="big" style="margin-top: 3px">Seal compound out of spec from a Tier 2 supplier</div>
+      <div class="muted" style="font-size: 12.5px; margin-top: 2px">4 claims &middot; Ford, GM &middot; lots L-2407-118, L-2407-121</div>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px">
+      <div class="card" data-hl="br" data-hlc="0,168,157" style="padding: 8px 12px"><div style="font-size: 14px; font-weight: 600">Tier 2/3 part caused it</div><div class="muted" style="font-size: 12px">Kessler Dichtungstechnik &middot; seal S-77</div></div>
+      <div class="card" data-hl="own" style="padding: 8px 12px"><div style="font-size: 14px; font-weight: 600">Own part</div><div class="muted" style="font-size: 12px">The cost stays with you</div></div>
+    </div>
+    <div class="card rise" data-in="cb" style="background: #FFFFFF">
+      <div class="row" style="justify-content: space-between"><span class="lbl agent">RECOVERY AGENT &middot; CHARGEBACK CB-0931</span><span style="font-size: 19px; font-weight: 700">$38,420.00</span></div>
+      <div style="font-size: 14.5px; margin-top: 3px">To Kessler Dichtungstechnik GmbH, under supply agreement KDT-SA-2021, cl. 9.2</div>
+      <div class="row" data-in="cb1" style="margin-top: 8px; gap: 8px">
+        <span class="chip">4 claims attached</span><span class="chip">8D-0412 report</span><span class="chip">Clause 9.2 pass-through</span>
+      </div>
+    </div>
+    <div class="card rise" data-in="trk" style="background: #FFFFFF; padding-bottom: 12px">
+      <div class="row" style="justify-content: space-between"><span class="lbl agent">RECOVERY STATUS</span><span style="font-size: 14px; font-weight: 600; color: #00756D" data-in="rec">Recovered <span data-count="rec" data-to="38420" data-pre="$">$0</span></span></div>
+      <div style="position: relative; margin: 12px 7px 0">
+        <div class="track" style="position: absolute; left: 0; right: 0; top: 2px; height: 6px"><div class="fill" data-grow="adv" data-w="100"></div></div>
+        <div class="row" style="position: relative; justify-content: space-between; padding-bottom: 22px">
+          <span class="stack" style="position: relative"><span class="stage-dot on"></span><span class="muted" style="position: absolute; top: 20px; left: 0; font-size: 12px">Drafted</span></span>
+          <span class="stack" style="position: relative"><span class="stage-dot"></span><span class="stage-dot on" data-in="s2"></span><span class="muted" style="position: absolute; top: 20px; left: 7px; transform: translateX(-50%); font-size: 12px">Approved</span></span>
+          <span class="stack" style="position: relative"><span class="stage-dot"></span><span class="stage-dot on" data-in="s3"></span><span class="muted" style="position: absolute; top: 20px; left: 7px; transform: translateX(-50%); font-size: 12px">Sent</span></span>
+          <span class="stack" style="position: relative"><span class="stage-dot"></span><span class="stage-dot on" data-in="s4"></span><span class="muted" style="position: absolute; top: 20px; left: 7px; transform: translateX(-50%); font-size: 12px">Agreed</span></span>
+          <span class="stack" style="position: relative"><span class="stage-dot"></span><span class="stage-dot on" data-in="s5"></span><span class="muted" style="position: absolute; top: 20px; right: 0; font-size: 12px">Settled</span></span>
+        </div>
+      </div>
+    </div>
+    <div class="row" data-in="pa" style="gap: 8px">
+      <span class="lbl human" style="margin-right: auto">PURCHASING LEAD APPROVES</span>
+      <span class="stack"><span id="f7-ap" class="btn btn-h" data-out="ap">Approve chargeback</span><span class="btn btn-ok" data-in="ap">&#10003; Chargeback approved</span></span>
+    </div>
+    <div class="card rise" data-in="ownc" style="border-color: #DDD3C2; background: #F7F3EC; padding: 8px 12px">
+      <div class="row" style="justify-content: space-between"><span style="font-size: 13.5px"><b style="font-weight: 600">Own part:</b> WC-018815 &middot; Stellantis &middot; bore finish, lot L-2406-097</span><span style="font-size: 13.5px; font-weight: 600">$2,140 retained</span></div>
+    </div>
+  </div>
+  <div class="cursor" data-cursor="ap>#f7-ap"><span class="ring"></span><svg width="22" height="24" viewBox="0 0 22 24"><path d="M2 2 L2 19 L7 14.5 L10.5 22 L13.5 20.6 L10 13.2 L17 13 Z" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+</div>
+</template>
+
+<template id="app-f8">
+<div class="app">
+  <div class="app-bar"><span class="app-logo">AW</span><span class="app-name">Warranty Intelligence</span><span class="app-mod">Finance &middot; Reconciliation</span><span class="app-demo">DEMO DATA</span><span class="app-user"><span class="app-av">SM</span>S. Morgan &middot; Controller</span></div>
+  <div class="app-body stack" style="display: grid">
+    <div data-out="vB" style="display: flex; flex-direction: column; gap: 10px">
+      <span class="lbl agent">RECONCILIATION AGENT &middot; OEM DEBIT NOTES VS APPROVED CLAIMS</span>
+      <div style="border: 1px solid #E7E0D3; border-radius: 8px; overflow: hidden">
+        <table class="tbl">
+          <tr><th>OEM</th><th>DEBIT NOTE</th><th class="num">DEBITED</th><th class="num">APPROVED</th><th class="num">VARIANCE</th></tr>
+          <tr data-in="m1"><td>GM</td><td>DN-88213</td><td class="num">$12,940</td><td class="num">$12,940</td><td class="num" style="color: #00756D">&#10003; Matched</td></tr>
+          <tr data-in="m2" data-hl="var"><td>Stellantis</td><td>DN-30417</td><td class="num">$7,315</td><td class="num">$6,180</td><td class="num" style="color: #B83D10; font-weight: 600">+$1,135</td></tr>
+          <tr data-in="m3"><td>Toyota</td><td>DN-71022</td><td class="num">$3,402</td><td class="num">$3,402</td><td class="num" style="color: #00756D">&#10003; Matched</td></tr>
+          <tr data-in="m4"><td>Ford</td><td>DN-55188</td><td class="num">$9,760</td><td class="num">$9,760</td><td class="num" style="color: #00756D">&#10003; Matched</td></tr>
+          <tr data-in="m5"><td>Ford</td><td>DN-55120</td><td class="num">$4,860</td><td class="num">Disputed</td><td class="num muted">On hold</td></tr>
+        </table>
+      </div>
+      <div class="card rise" data-in="var" style="border-color: #EBCDBD; background: #FFF8F3">
+        <div class="lbl agent">VARIANCE FLAGGED &middot; DN-30417</div>
+        <div style="font-size: 14.5px; margin-top: 4px">Labor billed at $68/h; the contract rate is $58/h (cl. 5.2). Adjustment of $1,135 drafted.</div>
+      </div>
+      <div class="row" data-in="pa" style="gap: 8px">
+        <span class="lbl human" style="margin-right: auto">CONTROLLER APPROVES</span>
+        <span class="stack"><span id="f8-post" class="btn btn-h" data-out="post">Post to JD Edwards</span><span class="btn btn-ok" data-in="post">&#10003; Posted &middot; JE-24-11873</span></span>
+      </div>
+    </div>
+    <div data-in="vB" style="display: flex; flex-direction: column; gap: 10px">
+      <div class="card row" data-hl="tp" data-hlc="228,180,76" style="justify-content: space-between; background: #FFFFFF">
+        <div>
+          <div class="lbl">NET WARRANTY COST &middot; YEAR TO DATE</div>
+          <div style="font-size: 30px; font-weight: 700; margin-top: 2px"><span data-count="nc" data-to="3.47" data-dec="2" data-pre="$" data-suf="M">$0.00M</span></div>
+          <div class="muted" style="font-size: 12.5px">After disputes &minus;$0.61M and supplier recoveries &minus;$0.29M</div>
+        </div>
+        <span data-in="tp" style="background: #E4B44C; color: #15232F; font-size: 12px; font-weight: 700; letter-spacing: .06em; border-radius: 5px; padding: 6px 10px">TRUE WARRANTY PROFITABILITY</span>
+      </div>
+      <div class="row" style="gap: 6px">
+        <span class="chip" style="background: #15232F; color: #FFFFFF; border-color: #15232F">Product</span><span class="chip">Plant</span><span class="chip">Region</span><span class="chip">OEM</span>
+      </div>
+      <div class="card" style="background: #FFFFFF; padding: 8px 12px">
+        <div class="barrow"><span>Brake calipers</span><div class="track"><div class="fill" data-grow="b1" data-w="100" style="background: #216B78"></div></div><span class="num">$1.42M</span></div>
+        <div class="barrow"><span>Seals &amp; gaskets</span><div class="track"><div class="fill" data-grow="b2" data-w="68" style="background: #216B78"></div></div><span class="num">$0.96M</span></div>
+        <div class="barrow"><span>Steering knuckles</span><div class="track"><div class="fill" data-grow="b3" data-w="50" style="background: #216B78"></div></div><span class="num">$0.71M</span></div>
+        <div class="barrow"><span>Sensors</span><div class="track"><div class="fill" data-grow="b4" data-w="27" style="background: #216B78"></div></div><span class="num">$0.38M</span></div>
+      </div>
+      <div class="card rise" data-in="wi" style="border-color: #9FD8D3; background: #F3FBFA">
+        <div class="row" style="justify-content: space-between"><span class="lbl agent">WHAT-IF &middot; WARRANTY RESERVE</span><span class="muted" style="font-size: 12.5px">If D-41 containment holds: seal claims &minus;18%</span></div>
+        <div class="barrow" style="margin-top: 6px"><span>Current reserve</span><div class="track"><div class="fill" style="width: 100%; background: #B5A992"></div></div><span class="num">$4.10M</span></div>
+        <div class="barrow"><span>Scenario</span><div class="track"><div class="fill" data-grow="wi2" data-w="88"></div></div><span class="num" data-in="wi2">$3.62M</span></div>
+        <div data-in="wi3" style="font-size: 13.5px; margin-top: 4px"><b style="font-weight: 600; color: #00756D">$0.48M</b> could be released. The controller sets the reserve.</div>
+      </div>
+    </div>
+  </div>
+  <div class="cursor" data-cursor="post>#f8-post"><span class="ring"></span><svg width="22" height="24" viewBox="0 0 22 24"><path d="M2 2 L2 19 L7 14.5 L10.5 22 L13.5 20.6 L10 13.2 L17 13 Z" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+</div>
+</template>
+
+<template id="app-f9">
+<div class="app">
+  <div class="app-bar"><span class="app-logo">AW</span><span class="app-name">Warranty Intelligence</span><span class="app-mod">Decisions</span><span class="app-demo">DEMO DATA</span><span class="app-user">4 roles &middot; 4 waiting</span></div>
+  <div class="app-body">
+    <span class="lbl">WAITING FOR A DECISION &middot; NOTHING MOVES WITHOUT A NAMED APPROVER</span>
+    <div class="card rise row" data-in="q1" style="background: #FFFFFF; justify-content: space-between">
+      <div><div class="lbl agent">DISPUTE AGENT PREPARED</div><div style="font-size: 15px; font-weight: 600; margin-top: 2px">Dispute WC-018734 to Ford</div><div class="muted" style="font-size: 12.5px">$4,860 &middot; clauses 3.1, 7.4</div></div>
+      <div style="text-align: right"><div class="lbl human">CLAIMS ANALYST</div><div class="stack" style="margin-top: 5px; justify-items: end"><span class="chip" data-out="gate">Ready</span><span class="chip risk" data-in="gate">&#9679; Held for decision</span></div></div>
+    </div>
+    <div class="card rise row" data-in="q2" style="background: #FFFFFF; justify-content: space-between">
+      <div><div class="lbl agent">EARLY WARNING AGENT PREPARED</div><div style="font-size: 15px; font-weight: 600; margin-top: 2px">Contain lots L-2407-118 and L-2407-121</div><div class="muted" style="font-size: 12.5px">4,550 units &middot; 8D-0412</div></div>
+      <div style="text-align: right"><div class="lbl human">QUALITY ENGINEER</div><div class="stack" style="margin-top: 5px; justify-items: end"><span class="chip" data-out="gate">Ready</span><span class="chip risk" data-in="gate">&#9679; Held for decision</span></div></div>
+    </div>
+    <div class="card rise row" data-in="q3" style="background: #FFFFFF; justify-content: space-between">
+      <div><div class="lbl agent">RECOVERY AGENT PREPARED</div><div style="font-size: 15px; font-weight: 600; margin-top: 2px">Chargeback CB-0931 to Kessler</div><div class="muted" style="font-size: 12.5px">$38,420 &middot; supply agreement cl. 9.2</div></div>
+      <div style="text-align: right"><div class="lbl human">PURCHASING LEAD</div><div class="stack" style="margin-top: 5px; justify-items: end"><span class="chip" data-out="gate">Ready</span><span class="chip risk" data-in="gate">&#9679; Held for decision</span></div></div>
+    </div>
+    <div class="card rise row" data-in="q4" style="background: #FFFFFF; justify-content: space-between">
+      <div><div class="lbl agent">RECONCILIATION AGENT PREPARED</div><div style="font-size: 15px; font-weight: 600; margin-top: 2px">Post adjustment DN-30417</div><div class="muted" style="font-size: 12.5px">+$1,135 &middot; JD Edwards</div></div>
+      <div style="text-align: right"><div class="lbl human">CONTROLLER</div><div class="stack" style="margin-top: 5px; justify-items: end"><span class="chip" data-out="gate">Ready</span><span class="chip risk" data-in="gate">&#9679; Held for decision</span></div></div>
+    </div>
+    <div class="row muted" data-in="log" style="font-size: 13px; margin-top: auto"><span class="live" style="background: #E4B44C; box-shadow: 0 0 0 4px rgba(228,180,76,.2)"></span>Every decision is logged to the warranty record, with the evidence behind it.</div>
+  </div>
+</div>
+</template>
+
 <div id="hud">
   <button id="play" type="button">Play</button>
   <button id="prev" class="ghost" type="button">&larr; Beat</button>
@@ -201,32 +478,44 @@
         lits: [[0, ['record']]] }
     ]},
     { label: 'Beat 5 · Claims hub', layer: 'f5', cues: [
-      { text: 'In the claims hub, every claim and debit note runs through six checks against the contract.', in: [[1, 0]] },
-      { text: 'When a check fails, the dispute agent drafts the challenge with the clause and the history attached.', in: [[2, 0]] },
-      { text: 'Your claims analyst reviews it and sends it.', in: [[3, 0]] }
+      { text: 'In the claims hub, every claim and debit note runs through six checks against the contract.',
+        in: [[1, 0], ['k1', .14], ['k2', .27], ['k3', .4], ['k4', .53], ['k5', .66], ['k6', .79], ['fail', .9]] },
+      { text: 'When a check fails, the dispute agent drafts the challenge with the clause and the history attached.',
+        in: [[2, 0], ['d', .05], ['d1', .62], ['d2', .74], ['d3', .86]] },
+      { text: 'Your claims analyst reviews it and sends it.', hold: .9,
+        in: [[3, 0], ['db', 0], ['send', .72]] }
     ]},
     { label: 'Beat 6 · Plant', layer: 'f6', cues: [
-      { text: 'At the plant, the early warning agent runs around the clock, linking every claim to lot, shift and defect code.', in: [[1, 0]] },
-      { text: 'When a pattern forms, it clusters the failures, opens the 8D and flags the lots at risk.', in: [[2, 0]] },
-      { text: 'Your quality engineer approves containment.', in: [[3, 0]] }
+      { text: 'At the plant, the early warning agent runs around the clock, linking every claim to lot, shift and defect code.',
+        in: [[1, 0], ['r1', .25], ['r2', .37], ['r3', .49], ['r4', .61], ['r5', .73], ['r6', .85]] },
+      { text: 'When a pattern forms, it clusters the failures, opens the 8D and flags the lots at risk.',
+        in: [[2, 0], ['cl', .05], ['pc', .3], ['8d', .55], ['lots', .78]] },
+      { text: 'Your quality engineer approves containment.', hold: 1,
+        in: [[3, 0], ['qa', 0], ['appr', .75]] }
     ]},
     { label: 'Beat 7 · Procurement', layer: 'f7', cues: [
       { text: 'In procurement, where a Tier 2 or Tier 3 part caused the failure, the recovery agent drafts the chargeback under that supplier’s contract.',
-        in: [[1, 0], [2, .5]] },
-      { text: 'The agent tracks recovery status through to settlement.', in: [[3, 0]] },
-      { text: 'Your purchasing lead approves the chargeback.', in: [[4, 0]] },
-      { text: 'Where the part is your own, the cost stays with you.', in: [[5, 0]] }
+        in: [[1, 0], ['br', .1], [2, .5], ['cb', .55], ['cb1', .8]] },
+      { text: 'The agent tracks recovery status through to settlement.', in: [[3, 0], ['trk', .05]] },
+      { text: 'Your purchasing lead approves the chargeback.', dur: 2.6,
+        in: [[4, 0], ['pa', 0], ['ap', .55], ['s2', .62], ['adv', .62], ['s3', .85], ['s4', 1.05], ['s5', 1.25], ['rec', 1.25]] },
+      { text: 'Where the part is your own, the cost stays with you.', hold: .6,
+        in: [[5, 0], ['own', .05], ['ownc', .2]] }
     ]},
     { label: 'Beat 8 · Finance', layer: 'f8', cues: [
-      { text: 'In finance, the reconciliation agent matches every OEM debit note to the approved claim and flags the variance.', in: [[1, 0]] },
-      { text: 'Your controller approves the posting.', in: [[2, 0]] },
-      { text: 'The agent then reports net cost by product, plant, region and OEM.', in: [[3, 0]] },
-      { text: 'That is your true warranty profitability.' },
-      { text: 'The same agent runs what-if scenarios on that record, so you can test a reserve before you set it.', in: [[4, 0]] }
+      { text: 'In finance, the reconciliation agent matches every OEM debit note to the approved claim and flags the variance.',
+        in: [[1, 0], ['m1', .1], ['m2', .2], ['m3', .3], ['m4', .4], ['m5', .5], ['var', .78]] },
+      { text: 'Your controller approves the posting.', dur: 2.6, in: [[2, 0], ['pa', 0], ['post', .6]] },
+      { text: 'The agent then reports net cost by product, plant, region and OEM.',
+        in: [[3, 0], ['vB', 0], ['nc', .1], ['b1', .35], ['b2', .45], ['b3', .55], ['b4', .65]] },
+      { text: 'That is your true warranty profitability.', in: [['tp', .1]] },
+      { text: 'The same agent runs what-if scenarios on that record, so you can test a reserve before you set it.',
+        in: [[4, 0], ['wi', .05], ['wi2', .45], ['wi3', .75]] }
     ]},
     { label: 'Beat 9 · Who decides', layer: 'f9', cues: [
-      { text: 'The agent swarm assists.', dur: 3.4, in: [[1, 0], [2, .18], [3, .36], [4, .54], [5, .78]] },
-      { text: 'Your people make the call.', hold: 1.8, in: [[6, 0]] }
+      { text: 'The agent swarm assists.', dur: 3.4,
+        in: [[1, 0], ['q1', 0], [2, .18], ['q2', .18], [3, .36], ['q3', .36], [4, .54], ['q4', .54], [5, .78], ['gate', .8]] },
+      { text: 'Your people make the call.', hold: 1.8, in: [[6, 0], ['log', .3]] }
     ]},
     { label: 'Beat 10 · Close', layer: 'ov', cues: [
       { text: 'We will build the warranty system to your specification.', lits: [[0, 'all']] },
@@ -312,6 +601,13 @@
     s.parentNode.insertBefore(wrap, s);
     wrap.appendChild(s);
     tagFrame(s);
+    // Widen the app panel: narrower step column, app screen in place of the APP CAPTURE box.
+    s.querySelector('div[style*="flex: 0 0 740px"]').style.flex = '0 0 470px';
+    var box = [].slice.call(s.querySelectorAll('div')).filter(function (d) {
+      return d.firstElementChild && d.firstElementChild.textContent === 'APP CAPTURE';
+    })[0];
+    var tpl = document.getElementById('app-' + id);
+    if (box && tpl) box.parentNode.replaceChild(tpl.content.firstElementChild.cloneNode(true), box);
   });
   // Beat 9's rule above the tagline fades in with it instead of sitting alone.
   var f9tag = document.querySelector('#L-f9 [data-in="5"]');
@@ -319,7 +615,17 @@
 
   var layers = {};
   [].slice.call(document.querySelectorAll('.layer')).forEach(function (el) {
-    layers[el.id.slice(2)] = { el: el, items: [].slice.call(el.querySelectorAll('[data-in]')) };
+    layers[el.id.slice(2)] = {
+      el: el,
+      items: [].slice.call(el.querySelectorAll('[data-in], [data-out], [data-hl], [data-grow], [data-count]')),
+      cursors: [].slice.call(el.querySelectorAll('.cursor')).map(function (c) {
+        return { el: c, ring: c.querySelector('.ring'), app: c.parentNode,
+          stops: c.dataset.cursor.split(',').map(function (s) {
+            var p = s.trim().split('>');
+            return { key: p[0], target: c.parentNode.querySelector(p[1]) };
+          }) };
+      })
+    };
   });
 
   // ---------------------------------------------------------------------------
@@ -338,17 +644,64 @@
 
   function paintItems(id, time) {
     var L = layers[id], m = revealAt[id] || {};
+    var prog = function (key, len) { var at = m[key]; return at == null ? 0 : ease(clamp((time - at) / len)); };
     L.items.forEach(function (el) {
-      var at = m[el.dataset.in];
-      var p = at == null ? 0 : ease(clamp((time - at) / FADE));
-      el.style.opacity = p;
-      if (el.classList.contains('rise')) el.style.transform = 'translateY(' + ((1 - p) * 12).toFixed(2) + 'px)';
+      var d = el.dataset;
+      if (d.in != null || d.out != null) {
+        var p = d.in != null ? prog(d.in, FADE) : 1;
+        var q = d.out != null ? prog(d.out, 0.16) : 0;
+        el.style.opacity = (p * (1 - q)).toFixed(3);
+        if (d.in != null && el.classList.contains('rise')) el.style.transform = 'translateY(' + ((1 - p) * 12).toFixed(2) + 'px)';
+      }
+      if (d.hl != null) {
+        el.style.backgroundColor = 'rgba(' + (d.hlc || '196,67,15') + ',' + (0.12 * prog(d.hl, FADE)).toFixed(3) + ')';
+      }
+      if (d.grow != null) el.style.width = (prog(d.grow, 1.1) * parseFloat(d.w)).toFixed(2) + '%';
+      if (d.count != null) {
+        var dec = parseInt(d.dec || '0', 10);
+        var v = prog(d.count, 1.2) * parseFloat(d.to);
+        el.textContent = (d.pre || '') + v.toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec }) + (d.suf || '');
+      }
     });
+    L.cursors.forEach(function (c) { paintCursor(c, m, time); });
     if (id === 'f9') {
       var rule = L.el.querySelector('[data-rule]');
       var at5 = m[5];
       rule.style.borderTopColor = 'rgba(232, 82, 26, ' + (at5 == null ? 0 : ease(clamp((time - at5) / FADE))) + ')';
     }
+  }
+
+  // The pointer glides to each target, clicks on its key's time, then fades away.
+  function centerIn(el, ancestor) {
+    var x = el.offsetWidth / 2, y = el.offsetHeight / 2;
+    while (el && el !== ancestor) { x += el.offsetLeft; y += el.offsetTop; el = el.offsetParent; }
+    return { x: x, y: y };
+  }
+  function paintCursor(c, m, time) {
+    var stops = c.stops.filter(function (s) { return m[s.key] != null && s.target; });
+    if (!stops.length) { c.el.style.opacity = 0; return; }
+    var pts = stops.map(function (s) { return centerIn(s.target, c.app); });
+    var times = stops.map(function (s) { return m[s.key]; });
+    var first = times[0], last = times[times.length - 1];
+    var start = { x: pts[0].x + 110, y: pts[0].y + 80 };
+    var pos = start, i;
+    for (i = 0; i < pts.length; i++) {
+      var from = i === 0 ? start : pts[i - 1];
+      var a = times[i] - 1.0, b = times[i] - 0.15;
+      if (time < a) { pos = from; break; }
+      var p = ease(clamp((time - a) / (b - a)));
+      pos = { x: from.x + (pts[i].x - from.x) * p, y: from.y + (pts[i].y - from.y) * p };
+      if (time < b) break;
+    }
+    var vis = clamp((time - (first - 1.2)) / 0.25) * (1 - clamp((time - (last + 0.7)) / 0.4));
+    c.el.style.opacity = vis.toFixed(3);
+    c.el.style.transform = 'translate(' + pos.x.toFixed(1) + 'px,' + pos.y.toFixed(1) + 'px)';
+    var near = times.filter(function (tt) { return time >= tt - 0.1 && time < tt + 0.45; })[0];
+    if (near != null) {
+      var r = clamp((time - (near - 0.1)) / 0.55);
+      c.ring.style.opacity = (1 - r).toFixed(3);
+      c.ring.style.transform = 'scale(' + (0.5 + r).toFixed(3) + ')';
+    } else c.ring.style.opacity = 0;
   }
 
   function litValue(set, name) { return set === 'all' || set.indexOf(name) > -1 ? 1 : DIM; }
