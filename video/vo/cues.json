@@ -1,0 +1,154 @@
+[
+ {
+  "beat": "Beat 1 · The problem",
+  "text": "Your warranty team is overwhelmed."
+ },
+ {
+  "beat": "Beat 1 · The problem",
+  "text": "The queue is bigger than the hours."
+ },
+ {
+  "beat": "Beat 1 · The problem",
+  "text": "Validating inputs takes more time than researching claims."
+ },
+ {
+  "beat": "Beat 1 · The problem",
+  "text": "Invalid claims go uncontested."
+ },
+ {
+  "beat": "Beat 1 · The problem",
+  "text": "Warranty costs increase."
+ },
+ {
+  "beat": "Beat 1 · The problem",
+  "text": "Supplier recovery is missed."
+ },
+ {
+  "beat": "Beat 1 · The problem",
+  "text": "Recalls arrive without warning."
+ },
+ {
+  "beat": "Beat 1 · The problem",
+  "text": "Negotiation leverage is lost."
+ },
+ {
+  "beat": "Beat 2 · Reporting is not fixing",
+  "text": "Warranty systems report all of them."
+ },
+ {
+  "beat": "Beat 2 · Reporting is not fixing",
+  "text": "Reporting a problem is not fixing it."
+ },
+ {
+  "beat": "Beat 3 · Introducing",
+  "text": "Introducing Agentic Warranty Intelligence."
+ },
+ {
+  "beat": "Beat 3 · Introducing",
+  "text": "We are reimagining how warranty claims get processed using AI."
+ },
+ {
+  "beat": "Beat 4 · The agent swarm",
+  "text": "Agentic Warranty Intelligence deploys a swarm of agents, each paired with the person who owns that part of the process."
+ },
+ {
+  "beat": "Beat 4 · The agent swarm",
+  "text": "The claims analyst, the quality engineer, purchasing and the controller each oversee agents that do the routine drafting, collecting and presenting."
+ },
+ {
+  "beat": "Beat 4 · The agent swarm",
+  "text": "Each agent does its own task, but they all operate from one coherent data record."
+ },
+ {
+  "beat": "Beat 4 · The agent swarm",
+  "text": "The claim, the contract, the lot and the cost become one source of truth."
+ },
+ {
+  "beat": "Transition · How it works",
+  "text": "Here is how it works."
+ },
+ {
+  "beat": "Beat 5 · Claims hub",
+  "text": "In the claims hub, every claim and debit note runs through six checks against the contract."
+ },
+ {
+  "beat": "Beat 5 · Claims hub",
+  "text": "When a check fails, the dispute agent drafts the challenge with the clause and the history attached."
+ },
+ {
+  "beat": "Beat 5 · Claims hub",
+  "text": "Your claims analyst reviews it and sends it."
+ },
+ {
+  "beat": "Beat 6 · Plant",
+  "text": "At the plant, the early warning agent runs around the clock, linking every claim to lot, shift and defect code."
+ },
+ {
+  "beat": "Beat 6 · Plant",
+  "text": "When a pattern forms, it clusters the failures, opens the 8D and flags the lots at risk."
+ },
+ {
+  "beat": "Beat 6 · Plant",
+  "text": "Your quality engineer approves containment."
+ },
+ {
+  "beat": "Beat 7 · Procurement",
+  "text": "In procurement, where a Tier 2 or Tier 3 part caused the failure, the recovery agent drafts the chargeback under that supplier’s contract."
+ },
+ {
+  "beat": "Beat 7 · Procurement",
+  "text": "The agent tracks recovery status through to settlement."
+ },
+ {
+  "beat": "Beat 7 · Procurement",
+  "text": "Your purchasing lead approves the chargeback."
+ },
+ {
+  "beat": "Beat 7 · Procurement",
+  "text": "Where the part is your own, the cost stays with you."
+ },
+ {
+  "beat": "Beat 8 · Finance",
+  "text": "In finance, the reconciliation agent matches every OEM debit note to the approved claim and flags the variance."
+ },
+ {
+  "beat": "Beat 8 · Finance",
+  "text": "Your controller approves the posting."
+ },
+ {
+  "beat": "Beat 8 · Finance",
+  "text": "The agent then reports net cost by product, plant, region and OEM."
+ },
+ {
+  "beat": "Beat 8 · Finance",
+  "text": "That is your true warranty profitability."
+ },
+ {
+  "beat": "Beat 8 · Finance",
+  "text": "The same agent runs what-if scenarios on that record, so you can test a reserve before you set it."
+ },
+ {
+  "beat": "Beat 9 · Who decides",
+  "text": "The agent swarm assists."
+ },
+ {
+  "beat": "Beat 9 · Who decides",
+  "text": "Your people make the call."
+ },
+ {
+  "beat": "Beat 10 · Close",
+  "text": "We build the warranty system to your specifications."
+ },
+ {
+  "beat": "Beat 10 · Close",
+  "text": "It is deployed in your environment and connected to your ERP, manufacturing, quality and supplier data sources."
+ },
+ {
+  "beat": "Beat 10 · Close",
+  "text": "Reduce recalls. Reduce warranty costs. Increase supplier recovery. Improve product quality."
+ },
+ {
+  "beat": "Beat 10 · Close",
+  "text": "Implement Agentic Warranty Intelligence today. Ask for a demo."
+ }
+]

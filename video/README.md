@@ -25,7 +25,20 @@ Timed to the voiceover script, with the voiceover lines as captions. These are r
 | 5 to 9 | Frames page steps on the left; animated app screens on the right (claims hub, plant, procurement, finance, decisions) |
 | 10 | Overview, all lit, then data sources lit; four outcome tiles with sourced industry figures; ask for a demo |
 
-## After the voiceover is recorded
+## Voiceover
+
+The recorded read is `vo/voiceover.mp3`. `vo/align.py` matches each line to it using the pauses (no speech recognition), and the video takes its timing from `vo/alignment.json`. To rebuild the final video after any change:
+
+    python3 build.py
+    node render.cjs --stills        # writes the schedule and timeline
+    python3 music/score.py
+    python3 vo/mix.py               # out/final-mix.wav
+    node render.cjs --no-captions   # out/awi-video-clean.mp4
+    ffmpeg -i out/awi-video-clean.mp4 -i out/final-mix.wav -map 0:v -map 1:a -c:v copy -c:a aac -b:a 192k -shortest out/awi-video-final.mp4
+
+For a new recording, replace `vo/voiceover.mp3`, run `python3 vo/align.py`, then the steps above.
+
+## Timing without a recording
 
 Timing comes from a word-count estimate. To lock a line to the real read, set `dur` (in seconds) on its cue in the `BEATS` list in `player.template.html`, then rebuild and re-export. The app screens in beats 5 to 9 are templates (`app-f5` to `app-f9`) in `player.template.html`. Their animation keys are scheduled in the same `BEATS` list. The app data is demo data: real OEM names, invented claims, amounts, people and suppliers.
 

@@ -1,0 +1,348 @@
+{
+ "source": "voiceover.mp3",
+ "duration": 164.99,
+ "cues": [
+  {
+   "cue": 0,
+   "beat": "Beat 1 \u00b7 The problem",
+   "text": "Your warranty team is overwhelmed.",
+   "start": 0.0,
+   "end": 2.265,
+   "ratio": 0.86,
+   "pause_after": 0.4
+  },
+  {
+   "cue": 1,
+   "beat": "Beat 1 \u00b7 The problem",
+   "text": "The queue is bigger than the hours.",
+   "start": 2.662,
+   "end": 4.536,
+   "ratio": 0.73,
+   "pause_after": 0.41
+  },
+  {
+   "cue": 2,
+   "beat": "Beat 1 \u00b7 The problem",
+   "text": "Validating inputs takes more time than researching claims.",
+   "start": 4.947,
+   "end": 8.402,
+   "ratio": 0.82,
+   "pause_after": 0.41
+  },
+  {
+   "cue": 3,
+   "beat": "Beat 1 \u00b7 The problem",
+   "text": "Invalid claims go uncontested.",
+   "start": 8.812,
+   "end": 10.93,
+   "ratio": 0.88,
+   "pause_after": 0.41
+  },
+  {
+   "cue": 4,
+   "beat": "Beat 1 \u00b7 The problem",
+   "text": "Warranty costs increase.",
+   "start": 11.336,
+   "end": 13.051,
+   "ratio": 0.84,
+   "pause_after": 0.38
+  },
+  {
+   "cue": 5,
+   "beat": "Beat 1 \u00b7 The problem",
+   "text": "Supplier recovery is missed.",
+   "start": 13.431,
+   "end": 15.277,
+   "ratio": 0.82,
+   "pause_after": 0.41
+  },
+  {
+   "cue": 6,
+   "beat": "Beat 1 \u00b7 The problem",
+   "text": "Recalls arrive without warning.",
+   "start": 15.691,
+   "end": 17.587,
+   "ratio": 0.76,
+   "pause_after": 0.42
+  },
+  {
+   "cue": 7,
+   "beat": "Beat 1 \u00b7 The problem",
+   "text": "Negotiation leverage is lost.",
+   "start": 18.009,
+   "end": 20.083,
+   "ratio": 0.89,
+   "pause_after": 0.95
+  },
+  {
+   "cue": 8,
+   "beat": "Beat 2 \u00b7 Reporting is not fixing",
+   "text": "Warranty systems report all of them.",
+   "start": 21.037,
+   "end": 23.371,
+   "ratio": 0.86,
+   "pause_after": 0.69
+  },
+  {
+   "cue": 9,
+   "beat": "Beat 2 \u00b7 Reporting is not fixing",
+   "text": "Reporting a problem is not fixing it.",
+   "start": 24.059,
+   "end": 27.31,
+   "ratio": 1.2,
+   "pause_after": 1.09
+  },
+  {
+   "cue": 10,
+   "beat": "Beat 3 \u00b7 Introducing",
+   "text": "Introducing Agentic Warranty Intelligence.",
+   "start": 28.399,
+   "end": 31.295,
+   "ratio": 0.87,
+   "pause_after": 0.4
+  },
+  {
+   "cue": 11,
+   "beat": "Beat 3 \u00b7 Introducing",
+   "text": "We are reimagining how warranty claims get processed using AI.",
+   "start": 31.696,
+   "end": 35.824,
+   "ratio": 0.94,
+   "pause_after": 0.96
+  },
+  {
+   "cue": 12,
+   "beat": "Beat 4 \u00b7 The agent swarm",
+   "text": "Agentic Warranty Intelligence deploys a swarm of agents, each paired with the person who owns that part of the process.",
+   "start": 36.782,
+   "end": 43.591,
+   "ratio": 0.87,
+   "pause_after": 0.39
+  },
+  {
+   "cue": 13,
+   "beat": "Beat 4 \u00b7 The agent swarm",
+   "text": "The claims analyst, the quality engineer, purchasing and the controller each oversee agents that do the routine drafting, collecting and presenting.",
+   "start": 43.985,
+   "end": 52.487,
+   "ratio": 0.87,
+   "pause_after": 0.41
+  },
+  {
+   "cue": 14,
+   "beat": "Beat 4 \u00b7 The agent swarm",
+   "text": "Each agent does its own task, but they all operate from one coherent data record.",
+   "start": 52.894,
+   "end": 57.847,
+   "ratio": 0.93,
+   "pause_after": 0.42
+  },
+  {
+   "cue": 15,
+   "beat": "Beat 4 \u00b7 The agent swarm",
+   "text": "The claim, the contract, the lot and the cost become one source of truth.",
+   "start": 58.263,
+   "end": 62.959,
+   "ratio": 0.99,
+   "pause_after": 0.67
+  },
+  {
+   "cue": 16,
+   "beat": "Transition \u00b7 How it works",
+   "text": "Here is how it works.",
+   "start": 63.633,
+   "end": 64.76,
+   "ratio": 0.68,
+   "pause_after": 0.89
+  },
+  {
+   "cue": 17,
+   "beat": "Beat 5 \u00b7 Claims hub",
+   "text": "In the claims hub, every claim and debit note runs through six checks against the contract.",
+   "start": 65.65,
+   "end": 70.561,
+   "ratio": 0.81,
+   "pause_after": 0.4
+  },
+  {
+   "cue": 18,
+   "beat": "Beat 5 \u00b7 Claims hub",
+   "text": "When a check fails, the dispute agent drafts the challenge with the clause and the history attached.",
+   "start": 70.959,
+   "end": 76.13,
+   "ratio": 0.78,
+   "pause_after": 0.36
+  },
+  {
+   "cue": 19,
+   "beat": "Beat 5 \u00b7 Claims hub",
+   "text": "Your claims analyst reviews it and sends it.",
+   "start": 76.488,
+   "end": 78.779,
+   "ratio": 0.72,
+   "pause_after": 0.9
+  },
+  {
+   "cue": 20,
+   "beat": "Beat 6 \u00b7 Plant",
+   "text": "At the plant, the early warning agent runs around the clock, linking every claim to lot, shift and defect code.",
+   "start": 79.68,
+   "end": 86.597,
+   "ratio": 0.98,
+   "pause_after": 0.39
+  },
+  {
+   "cue": 21,
+   "beat": "Beat 6 \u00b7 Plant",
+   "text": "When a pattern forms, it clusters the failures, opens the 8D and flags the lots at risk.",
+   "start": 86.99,
+   "end": 92.567,
+   "ratio": 0.99,
+   "pause_after": 0.4
+  },
+  {
+   "cue": 22,
+   "beat": "Beat 6 \u00b7 Plant",
+   "text": "Your quality engineer approves containment.",
+   "start": 92.965,
+   "end": 95.272,
+   "ratio": 0.7,
+   "pause_after": 0.89
+  },
+  {
+   "cue": 23,
+   "beat": "Beat 7 \u00b7 Procurement",
+   "text": "In procurement, where a Tier 2 or Tier 3 part caused the failure, the recovery agent drafts the chargeback under that supplier\u2019s contract.",
+   "start": 96.16,
+   "end": 104.085,
+   "ratio": 0.89,
+   "pause_after": 0.39
+  },
+  {
+   "cue": 24,
+   "beat": "Beat 7 \u00b7 Procurement",
+   "text": "The agent tracks recovery status through to settlement.",
+   "start": 104.477,
+   "end": 107.281,
+   "ratio": 0.7,
+   "pause_after": 0.4
+  },
+  {
+   "cue": 25,
+   "beat": "Beat 7 \u00b7 Procurement",
+   "text": "Your purchasing lead approves the chargeback.",
+   "start": 107.678,
+   "end": 109.931,
+   "ratio": 0.66,
+   "pause_after": 0.54
+  },
+  {
+   "cue": 26,
+   "beat": "Beat 7 \u00b7 Procurement",
+   "text": "Where the part is your own, the cost stays with you.",
+   "start": 110.47,
+   "end": 113.267,
+   "ratio": 0.81,
+   "pause_after": 0.96
+  },
+  {
+   "cue": 27,
+   "beat": "Beat 8 \u00b7 Finance",
+   "text": "In finance, the reconciliation agent matches every OEM debit note to the approved claim and flags the variance.",
+   "start": 114.223,
+   "end": 121.098,
+   "ratio": 0.93,
+   "pause_after": 0.37
+  },
+  {
+   "cue": 28,
+   "beat": "Beat 8 \u00b7 Finance",
+   "text": "Your controller approves the posting.",
+   "start": 121.466,
+   "end": 123.224,
+   "ratio": 0.61,
+   "pause_after": 0.42
+  },
+  {
+   "cue": 29,
+   "beat": "Beat 8 \u00b7 Finance",
+   "text": "The agent then reports net cost by product, plant, region and OEM.",
+   "start": 123.642,
+   "end": 128.587,
+   "ratio": 1.13,
+   "pause_after": 0.37
+  },
+  {
+   "cue": 30,
+   "beat": "Beat 8 \u00b7 Finance",
+   "text": "That is your true warranty profitability.",
+   "start": 128.957,
+   "end": 131.58,
+   "ratio": 0.85,
+   "pause_after": 0.43
+  },
+  {
+   "cue": 31,
+   "beat": "Beat 8 \u00b7 Finance",
+   "text": "The same agent runs what-if scenarios on that record, so you can test a reserve before you set it.",
+   "start": 132.008,
+   "end": 137.489,
+   "ratio": 0.88,
+   "pause_after": 0.69
+  },
+  {
+   "cue": 32,
+   "beat": "Beat 9 \u00b7 Who decides",
+   "text": "The agent swarm assists.",
+   "start": 138.184,
+   "end": 139.848,
+   "ratio": 0.85,
+   "pause_after": 0.33
+  },
+  {
+   "cue": 33,
+   "beat": "Beat 9 \u00b7 Who decides",
+   "text": "Your people make the call.",
+   "start": 140.178,
+   "end": 141.666,
+   "ratio": 0.73,
+   "pause_after": 0.99
+  },
+  {
+   "cue": 34,
+   "beat": "Beat 10 \u00b7 Close",
+   "text": "We build the warranty system to your specifications.",
+   "start": 142.653,
+   "end": 145.57,
+   "ratio": 0.77,
+   "pause_after": 0.34
+  },
+  {
+   "cue": 35,
+   "beat": "Beat 10 \u00b7 Close",
+   "text": "It is deployed in your environment and connected to your ERP, manufacturing, quality and supplier data sources.",
+   "start": 145.908,
+   "end": 152.93,
+   "ratio": 0.95,
+   "pause_after": 0.42
+  },
+  {
+   "cue": 36,
+   "beat": "Beat 10 \u00b7 Close",
+   "text": "Reduce recalls. Reduce warranty costs. Increase supplier recovery. Improve product quality.",
+   "start": 153.349,
+   "end": 160.23,
+   "ratio": 1.1,
+   "pause_after": 0.55
+  },
+  {
+   "cue": 37,
+   "beat": "Beat 10 \u00b7 Close",
+   "text": "Implement Agentic Warranty Intelligence today. Ask for a demo.",
+   "start": 160.779,
+   "end": 164.763,
+   "ratio": 0.91,
+   "pause_after": 0
+  }
+ ]
+}

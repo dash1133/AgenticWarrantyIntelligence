@@ -24,7 +24,7 @@ const stillsOnly = args.includes('--stills');
   const cues = await page.evaluate(() => window.AWV.cues);
 
   const fmt = s => `${Math.floor(s / 60)}:${(s % 60).toFixed(1).padStart(4, '0')}`;
-  const sheet = ['# Cue sheet', '', `Estimated runtime ${fmt(duration)}. Start times come from the word-count estimate in awi-video.html.`, '',
+  const sheet = ['# Cue sheet', '', `Runtime ${fmt(duration)}. Start times follow the recorded voiceover (vo/alignment.json) when present, otherwise a word-count estimate.`, '',
     '| Start | Length | Beat | Line |', '| --- | --- | --- | --- |',
     ...cues.map(c => `| ${fmt(c.start)} | ${c.dur.toFixed(1)}s | ${c.beat} | ${c.text} |`), ''];
   fs.writeFileSync(path.join(__dirname, 'cue-sheet.md'), sheet.join('\n'));
@@ -32,6 +32,8 @@ const stillsOnly = args.includes('--stills');
   const beats = {};
   cues.forEach(c => { if (!(c.beat in beats)) beats[c.beat] = c.start; });
   fs.writeFileSync(path.join(__dirname, 'music', 'timeline.json'), JSON.stringify({ duration, beats }, null, 2));
+  // Cue schedule, for vo/mix.py.
+  fs.writeFileSync(path.join(__dirname, 'vo', 'schedule.json'), JSON.stringify({ duration, cues }, null, 1));
 
   if (stillsOnly) {
     const dir = path.join(outDir, 'stills');

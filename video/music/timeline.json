@@ -1,16 +1,16 @@
 {
-  "duration": 162.25344827586207,
+  "duration": 178.35999999999999,
   "beats": {
-    "Beat 1 · The problem": 0.5,
-    "Beat 2 · Reporting is not fixing": 16.16,
-    "Beat 3 · Introducing": 23.53,
-    "Beat 4 · The agent swarm": 30.31,
-    "Transition · How it works": 55.59,
-    "Beat 5 · Claims hub": 59.14,
-    "Beat 6 · Plant": 75.13,
-    "Beat 7 · Procurement": 91.56,
-    "Beat 8 · Finance": 110.4,
-    "Beat 9 · Who decides": 133.31,
-    "Beat 10 · Close": 140.99
+    "Beat 1 · The problem": 0.8,
+    "Beat 2 · Reporting is not fixing": 22.087,
+    "Beat 3 · Introducing": 30.399,
+    "Beat 4 · The agent swarm": 39.872,
+    "Transition · How it works": 66.973,
+    "Beat 5 · Claims hub": 69.8,
+    "Beat 6 · Plant": 84.71,
+    "Beat 7 · Procurement": 102.14,
+    "Beat 8 · Finance": 120.873,
+    "Beat 9 · Who decides": 145.084,
+    "Beat 10 · Close": 151.903
   }
 }

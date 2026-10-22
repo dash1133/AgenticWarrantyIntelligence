@@ -1,0 +1,385 @@
+{
+ "duration": 178.35999999999999,
+ "cues": [
+  {
+   "beat": "Beat 1 · The problem",
+   "start": 0.8,
+   "dur": 2.662,
+   "text": "Your warranty team is overwhelmed.",
+   "src": [
+    0,
+    2.662
+   ]
+  },
+  {
+   "beat": "Beat 1 · The problem",
+   "start": 3.462,
+   "dur": 2.285,
+   "text": "The queue is bigger than the hours.",
+   "src": [
+    2.662,
+    4.947
+   ]
+  },
+  {
+   "beat": "Beat 1 · The problem",
+   "start": 5.747,
+   "dur": 3.865,
+   "text": "Validating inputs takes more time than researching claims.",
+   "src": [
+    4.947,
+    8.812
+   ]
+  },
+  {
+   "beat": "Beat 1 · The problem",
+   "start": 9.612,
+   "dur": 2.524,
+   "text": "Invalid claims go uncontested.",
+   "src": [
+    8.812,
+    11.336
+   ]
+  },
+  {
+   "beat": "Beat 1 · The problem",
+   "start": 12.136,
+   "dur": 2.095,
+   "text": "Warranty costs increase.",
+   "src": [
+    11.336,
+    13.431
+   ]
+  },
+  {
+   "beat": "Beat 1 · The problem",
+   "start": 14.231,
+   "dur": 2.26,
+   "text": "Supplier recovery is missed.",
+   "src": [
+    13.431,
+    15.691
+   ]
+  },
+  {
+   "beat": "Beat 1 · The problem",
+   "start": 16.491,
+   "dur": 2.318,
+   "text": "Recalls arrive without warning.",
+   "src": [
+    15.691,
+    18.009
+   ]
+  },
+  {
+   "beat": "Beat 1 · The problem",
+   "start": 18.809,
+   "dur": 3.278,
+   "text": "Negotiation leverage is lost.",
+   "src": [
+    18.009,
+    21.037
+   ]
+  },
+  {
+   "beat": "Beat 2 · Reporting is not fixing",
+   "start": 22.087,
+   "dur": 3.022,
+   "text": "Warranty systems report all of them.",
+   "src": [
+    21.037,
+    24.059
+   ]
+  },
+  {
+   "beat": "Beat 2 · Reporting is not fixing",
+   "start": 25.109,
+   "dur": 5.29,
+   "text": "Reporting a problem is not fixing it.",
+   "src": [
+    24.059,
+    28.399
+   ]
+  },
+  {
+   "beat": "Beat 3 · Introducing",
+   "start": 30.399,
+   "dur": 3.717,
+   "text": "Introducing Agentic Warranty Intelligence.",
+   "src": [
+    28.399,
+    31.696
+   ]
+  },
+  {
+   "beat": "Beat 3 · Introducing",
+   "start": 34.116,
+   "dur": 5.756,
+   "text": "We are reimagining how warranty claims get processed using AI.",
+   "src": [
+    31.696,
+    36.782
+   ]
+  },
+  {
+   "beat": "Beat 4 · The agent swarm",
+   "start": 39.872,
+   "dur": 7.203,
+   "text": "Agentic Warranty Intelligence deploys a swarm of agents, each paired with the person who owns that part of the process.",
+   "src": [
+    36.782,
+    43.985
+   ]
+  },
+  {
+   "beat": "Beat 4 · The agent swarm",
+   "start": 47.075,
+   "dur": 8.909,
+   "text": "The claims analyst, the quality engineer, purchasing and the controller each oversee agents that do the routine drafting, collecting and presenting.",
+   "src": [
+    43.985,
+    52.894
+   ]
+  },
+  {
+   "beat": "Beat 4 · The agent swarm",
+   "start": 55.984,
+   "dur": 5.369,
+   "text": "Each agent does its own task, but they all operate from one coherent data record.",
+   "src": [
+    52.894,
+    58.263
+   ]
+  },
+  {
+   "beat": "Beat 4 · The agent swarm",
+   "start": 61.353,
+   "dur": 5.62,
+   "text": "The claim, the contract, the lot and the cost become one source of truth.",
+   "src": [
+    58.263,
+    63.633
+   ]
+  },
+  {
+   "beat": "Transition · How it works",
+   "start": 66.973,
+   "dur": 2.827,
+   "text": "Here is how it works.",
+   "src": [
+    63.633,
+    65.65
+   ]
+  },
+  {
+   "beat": "Beat 5 · Claims hub",
+   "start": 69.8,
+   "dur": 5.309,
+   "text": "In the claims hub, every claim and debit note runs through six checks against the contract.",
+   "src": [
+    65.65,
+    70.959
+   ]
+  },
+  {
+   "beat": "Beat 5 · Claims hub",
+   "start": 75.109,
+   "dur": 5.529,
+   "text": "When a check fails, the dispute agent drafts the challenge with the clause and the history attached.",
+   "src": [
+    70.959,
+    76.488
+   ]
+  },
+  {
+   "beat": "Beat 5 · Claims hub",
+   "start": 80.638,
+   "dur": 4.072,
+   "text": "Your claims analyst reviews it and sends it.",
+   "src": [
+    76.488,
+    79.68
+   ]
+  },
+  {
+   "beat": "Beat 6 · Plant",
+   "start": 84.71,
+   "dur": 7.31,
+   "text": "At the plant, the early warning agent runs around the clock, linking every claim to lot, shift and defect code.",
+   "src": [
+    79.68,
+    86.99
+   ]
+  },
+  {
+   "beat": "Beat 6 · Plant",
+   "start": 92.02,
+   "dur": 5.975,
+   "text": "When a pattern forms, it clusters the failures, opens the 8D and flags the lots at risk.",
+   "src": [
+    86.99,
+    92.965
+   ]
+  },
+  {
+   "beat": "Beat 6 · Plant",
+   "start": 97.995,
+   "dur": 4.145,
+   "text": "Your quality engineer approves containment.",
+   "src": [
+    92.965,
+    96.16
+   ]
+  },
+  {
+   "beat": "Beat 7 · Procurement",
+   "start": 102.14,
+   "dur": 8.317,
+   "text": "In procurement, where a Tier 2 or Tier 3 part caused the failure, the recovery agent drafts the chargeback under that supplier’s contract.",
+   "src": [
+    96.16,
+    104.477
+   ]
+  },
+  {
+   "beat": "Beat 7 · Procurement",
+   "start": 110.457,
+   "dur": 3.201,
+   "text": "The agent tracks recovery status through to settlement.",
+   "src": [
+    104.477,
+    107.678
+   ]
+  },
+  {
+   "beat": "Beat 7 · Procurement",
+   "start": 113.658,
+   "dur": 2.792,
+   "text": "Your purchasing lead approves the chargeback.",
+   "src": [
+    107.678,
+    110.47
+   ]
+  },
+  {
+   "beat": "Beat 7 · Procurement",
+   "start": 116.45,
+   "dur": 4.423,
+   "text": "Where the part is your own, the cost stays with you.",
+   "src": [
+    110.47,
+    114.223
+   ]
+  },
+  {
+   "beat": "Beat 8 · Finance",
+   "start": 120.873,
+   "dur": 7.243,
+   "text": "In finance, the reconciliation agent matches every OEM debit note to the approved claim and flags the variance.",
+   "src": [
+    114.223,
+    121.466
+   ]
+  },
+  {
+   "beat": "Beat 8 · Finance",
+   "start": 128.116,
+   "dur": 2.176,
+   "text": "Your controller approves the posting.",
+   "src": [
+    121.466,
+    123.642
+   ]
+  },
+  {
+   "beat": "Beat 8 · Finance",
+   "start": 130.292,
+   "dur": 5.315,
+   "text": "The agent then reports net cost by product, plant, region and OEM.",
+   "src": [
+    123.642,
+    128.957
+   ]
+  },
+  {
+   "beat": "Beat 8 · Finance",
+   "start": 135.607,
+   "dur": 3.051,
+   "text": "That is your true warranty profitability.",
+   "src": [
+    128.957,
+    132.008
+   ]
+  },
+  {
+   "beat": "Beat 8 · Finance",
+   "start": 138.658,
+   "dur": 6.426,
+   "text": "The same agent runs what-if scenarios on that record, so you can test a reserve before you set it.",
+   "src": [
+    132.008,
+    138.184
+   ]
+  },
+  {
+   "beat": "Beat 9 · Who decides",
+   "start": 145.084,
+   "dur": 2.834,
+   "text": "The agent swarm assists.",
+   "src": [
+    138.184,
+    140.178
+   ]
+  },
+  {
+   "beat": "Beat 9 · Who decides",
+   "start": 147.918,
+   "dur": 3.985,
+   "text": "Your people make the call.",
+   "src": [
+    140.178,
+    142.653
+   ]
+  },
+  {
+   "beat": "Beat 10 · Close",
+   "start": 151.903,
+   "dur": 3.255,
+   "text": "We build the warranty system to your specifications.",
+   "src": [
+    142.653,
+    145.908
+   ]
+  },
+  {
+   "beat": "Beat 10 · Close",
+   "start": 155.158,
+   "dur": 7.441,
+   "text": "It is deployed in your environment and connected to your ERP, manufacturing, quality and supplier data sources.",
+   "src": [
+    145.908,
+    153.349
+   ]
+  },
+  {
+   "beat": "Beat 10 · Close",
+   "start": 162.599,
+   "dur": 8.55,
+   "text": "Reduce recalls. Reduce warranty costs. Increase supplier recovery. Improve product quality.",
+   "src": [
+    153.349,
+    160.779
+   ]
+  },
+  {
+   "beat": "Beat 10 · Close",
+   "start": 171.149,
+   "dur": 7.211,
+   "text": "Implement Agentic Warranty Intelligence today. Ask for a demo.",
+   "src": [
+    160.779,
+    164.99
+   ]
+  }
+ ]
+}

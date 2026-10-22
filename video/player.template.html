@@ -571,7 +571,7 @@
         in: [[4, 0], ['wi', .05], ['wi2', .45], ['wi3', .75]] }
     ]},
     { label: 'Beat 9 · Who decides', layer: 'f9', cues: [
-      { text: 'The agent swarm assists.', dur: 3.4,
+      { text: 'The agent swarm assists.', dur: 3.4, hold: 1.2,
         in: [[1, 0], ['q1', 0], [2, .18], ['q2', .18], [3, .36], ['q3', .36], [4, .54], ['q4', .54], [5, .78], ['gate', .8]] },
       { text: 'Your people make the call.', hold: 1.8, in: [[6, 0], ['log', .3]] }
     ]},
@@ -589,16 +589,31 @@
   // ---------------------------------------------------------------------------
   // Build the flat cue list with start times.
   // ---------------------------------------------------------------------------
-  var cues = [], t = LEAD;
+  // With a recorded voiceover (vo/alignment.json, injected by build.py), each cue takes
+  // its real length from the read: the spoken line, the natural pause after it, then any
+  // hold. The same schedule cuts the voice track (vo/mix.py), so picture and voice match.
+  var VO = /*VO*/null;
+  var VO_LEAD = 0.8, HOLD_SCALE = 0.7, BEAT_PAD = 0.25;
+  var cues = [], t = VO ? VO_LEAD : LEAD, k = 0;
   BEATS.forEach(function (b, bi) {
     b.start = t;
     b.cues.forEach(function (c, ci) {
-      var words = c.text.trim().split(/\s+/).length;
-      var speak = c.dur || Math.max(MIN, words / WPS);
-      var dur = speak + PAD + (c.hold || 0) + (ci === b.cues.length - 1 ? GAP : 0);
+      var last = ci === b.cues.length - 1, speak, dur, src = null;
+      if (VO) {
+        var a = VO.cues[k], next = VO.cues[k + 1] ? VO.cues[k + 1].start : VO.duration;
+        speak = a.end - a.start;
+        var isFinal = !VO.cues[k + 1];
+        dur = (next - a.start) + (c.hold || 0) * (isFinal ? 1 : HOLD_SCALE) + (last && !isFinal ? BEAT_PAD : 0);
+        src = [a.start, next];
+      } else {
+        var words = c.text.trim().split(/\s+/).length;
+        speak = c.dur || Math.max(MIN, words / WPS);
+        dur = speak + PAD + (c.hold || 0) + (last ? GAP : 0);
+      }
       cues.push({ beat: bi, layer: c.layer || b.layer, text: c.text, start: t, speak: speak,
-                  dur: dur, ins: c.in || [], lits: c.lits || null });
+                  dur: dur, ins: c.in || [], lits: c.lits || null, src: src });
       t += dur;
+      k++;
     });
   });
   var DURATION = t;
@@ -882,7 +897,7 @@
     duration: DURATION,
     seek: function (time) { return seek(time); },
     cues: cues.map(function (c) {
-      return { beat: BEATS[c.beat].label, start: +c.start.toFixed(2), dur: +c.dur.toFixed(2), text: c.text };
+      return { beat: BEATS[c.beat].label, start: +c.start.toFixed(3), dur: +c.dur.toFixed(3), text: c.text, src: c.src };
     })
   };
 }());
