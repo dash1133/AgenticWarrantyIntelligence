@@ -1,5 +1,9 @@
 [
  {
+  "beat": "Cover",
+  "text": ""
+ },
+ {
   "beat": "Beat 1 · The problem",
   "text": "Your warranty team is overwhelmed."
  },
@@ -85,7 +89,7 @@
  },
  {
   "beat": "Beat 6 · Plant",
-  "text": "When a pattern forms, it clusters the failures, opens the 8D and flags the lots at risk."
+  "text": "When a pattern forms, it clusters the failures, opens a process improvement work item and flags the lots at risk."
  },
  {
   "beat": "Beat 6 · Plant",

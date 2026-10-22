@@ -25,11 +25,11 @@ What you'll see:
 Chapters:
 0:00 The warranty problem
 0:33 Introducing Agentic Warranty Intelligence
-1:09 Claims hub: six checks and the dispute agent
-1:27 Plant: early warning and containment
-1:44 Procurement: supplier recovery
-2:03 Finance: reconciliation and true profitability
-2:27 Your people make the call
+1:10 Claims hub: six checks and the dispute agent
+1:28 Plant: early warning and containment
+1:47 Procurement: supplier recovery
+2:05 Finance: reconciliation and true profitability
+2:30 Your people make the call
 
 We build the warranty system to your specifications and deploy it in your environment. Ask for a demo: [DEMO LINK]
 
@@ -50,4 +50,4 @@ agentic warranty intelligence, warranty management, automotive warranty, warrant
 
 - Category: Science & Technology.
 - Pinned first comment: "How many OEM warranty claims does your team have time to check against the contract before they are paid?"
-- Shorts: beat 5, claims hub (1:12 to 1:27), and beat 8, finance (2:03 to 2:27).
+- Shorts: beat 5, claims hub (1:13 to 1:28), and beat 8, finance (2:05 to 2:30).
