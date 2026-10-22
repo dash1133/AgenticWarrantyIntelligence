@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agentic Warranty Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #F5F1E8;
+    font-family: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  }
+  #stage {
+    width: 1280px;
+    height: 720px;
+    transform-origin: top left;
+  }
+  #shell {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow: hidden;
+  }
+  .sec {
+    transition: opacity 450ms ease;
+  }
+  /* Step indicator. Hidden unless ?ui=1, so it never lands in a take. */
+  #hud {
+    position: fixed;
+    left: 12px;
+    bottom: 12px;
+    z-index: 50;
+    display: none;
+    gap: 8px;
+    align-items: center;
+    background: #15232F;
+    color: #FFFFFF;
+    border-radius: 8px;
+    padding: 7px 12px;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+  }
+  #hud.on { display: flex; }
+  #hud b { font-weight: 600; color: #E4B44C; }
+</style>
+</head>
+<body>
+
+<div id="shell">
+<div id="stage">
+
+<div style="width: 1280px; height: 720px; box-sizing: border-box; padding: 32px 56px 28px; background: #F5F1E8; color: #15232F; display: flex; flex-direction: column; gap: 10px">
+
+  <div style="border: 1.5px solid #CFC6B4; border-radius: 12px; background: #FBF8F1; overflow: hidden">
+
+    <div class="sec" id="sec-title">
+      <div style="height: 56px; box-sizing: border-box; background: #15232F; padding: 0 18px; display: flex; align-items: center">
+        <span style="font-size: 25px; font-weight: 700; letter-spacing: -0.015em; color: #FFFFFF">Agentic Warranty Intelligence</span>
+      </div>
+    </div>
+
+    <div style="padding: 15px; display: flex; flex-direction: column; gap: 11px">
+
+      <div class="sec" id="sec-stages">
+        <div style="display: grid; grid-template-columns: 118px repeat(4, minmax(0, 1fr)); gap: 12px; align-items: end">
+          <div></div>
+          <div style="height: 44px; box-sizing: border-box; border-bottom: 2px solid #C2521C; padding-bottom: 5px; display: flex; flex-direction: column; justify-content: flex-end"><span style="font-size: 9.5px; font-weight: 600; letter-spacing: 0.11em; color: #C2521C">01 &middot; CLAIMS HUB</span><span style="font-size: 17px; font-weight: 700; letter-spacing: -0.01em; margin-top: 1px">Validate &amp; triage</span></div>
+          <div style="height: 44px; box-sizing: border-box; border-bottom: 2px solid #C2521C; padding-bottom: 5px; display: flex; flex-direction: column; justify-content: flex-end"><span style="font-size: 9.5px; font-weight: 600; letter-spacing: 0.11em; color: #C2521C">02 &middot; PLANT</span><span style="font-size: 17px; font-weight: 700; letter-spacing: -0.01em; margin-top: 1px">Trace &amp; intervene</span></div>
+          <div style="height: 44px; box-sizing: border-box; border-bottom: 2px solid #C2521C; padding-bottom: 5px; display: flex; flex-direction: column; justify-content: flex-end"><span style="font-size: 9.5px; font-weight: 600; letter-spacing: 0.11em; color: #C2521C">03 &middot; PROCUREMENT</span><span style="font-size: 17px; font-weight: 700; letter-spacing: -0.01em; margin-top: 1px">Recover cost</span></div>
+          <div style="height: 44px; box-sizing: border-box; border-bottom: 2px solid #C2521C; padding-bottom: 5px; display: flex; flex-direction: column; justify-content: flex-end"><span style="font-size: 9.5px; font-weight: 600; letter-spacing: 0.11em; color: #C2521C">04 &middot; FINANCE</span><span style="font-size: 17px; font-weight: 700; letter-spacing: -0.01em; margin-top: 1px">Reconcile &amp; report</span></div>
+        </div>
+      </div>
+
+      <div class="sec" id="sec-roles">
+        <div style="display: grid; grid-template-columns: 118px repeat(4, minmax(0, 1fr)); gap: 12px">
+          <div style="display: flex; flex-direction: column; justify-content: center"><span style="font-size: 10px; font-weight: 600; letter-spacing: 0.12em; color: #C2521C">THE ROLE<br><span style="font-weight: 400; color: #7A8690">decides</span></span></div>
+          <div style="height: 60px; box-sizing: border-box; background: #FFFFFF; border: 1px solid #DED7C8; border-left: 3px solid #C2521C; border-radius: 8px; padding: 8px 11px; display: flex; flex-direction: column; justify-content: center"><span style="font-size: 14px; font-weight: 700">Claims analyst</span><span style="font-size: 11.5px; line-height: 1.3; color: #5E6A72; margin-top: 2px">Reviews the draft and sends it</span></div>
+          <div style="height: 60px; box-sizing: border-box; background: #FFFFFF; border: 1px solid #DED7C8; border-left: 3px solid #C2521C; border-radius: 8px; padding: 8px 11px; display: flex; flex-direction: column; justify-content: center"><span style="font-size: 14px; font-weight: 700">Quality engineer</span><span style="font-size: 11.5px; line-height: 1.3; color: #5E6A72; margin-top: 2px">Approves containment</span></div>
+          <div style="height: 60px; box-sizing: border-box; background: #FFFFFF; border: 1px solid #DED7C8; border-left: 3px solid #C2521C; border-radius: 8px; padding: 8px 11px; display: flex; flex-direction: column; justify-content: center"><span style="font-size: 14px; font-weight: 700">Purchasing lead</span><span style="font-size: 11.5px; line-height: 1.3; color: #5E6A72; margin-top: 2px">Approves the chargeback</span></div>
+          <div style="height: 60px; box-sizing: border-box; background: #FFFFFF; border: 1px solid #DED7C8; border-left: 3px solid #C2521C; border-radius: 8px; padding: 8px 11px; display: flex; flex-direction: column; justify-content: center"><span style="font-size: 14px; font-weight: 700">Controller</span><span style="font-size: 11.5px; line-height: 1.3; color: #5E6A72; margin-top: 2px">Approves the posting</span></div>
+        </div>
+      </div>
+
+      <div class="sec" id="sec-swarm">
+        <div style="display: grid; grid-template-columns: 118px repeat(4, minmax(0, 1fr)); gap: 12px; align-items: start">
+          <div style="padding-top: 7px"><span style="font-size: 10px; font-weight: 600; letter-spacing: 0.12em; color: #216B78">THE SWARM<br><span style="font-weight: 400; color: #7A8690">does the work</span></span></div>
+
+          <div style="height: 176px; box-sizing: border-box; display: flex; flex-direction: column; gap: 7px">
+            <div style="height: 34px; box-sizing: border-box; background: #216B78; border-radius: 7px; padding: 0 11px; display: flex; align-items: center"><span style="font-size: 12.5px; font-weight: 600; color: #FFFFFF">Validation &amp; triage agent</span></div>
+            <div style="padding: 0 2px"><span style="font-size: 12px; line-height: 1.45; color: #3F4A52">Runs six checks against the contract on every claim and debit note.</span></div>
+            <div style="height: 34px; box-sizing: border-box; background: #216B78; border-radius: 7px; padding: 0 11px; display: flex; align-items: center; margin-top: 9px"><span style="font-size: 12.5px; font-weight: 600; color: #FFFFFF">Dispute agent</span></div>
+            <div style="padding: 0 2px"><span style="font-size: 12px; line-height: 1.45; color: #3F4A52">Drafts the challenge with the clause and the history attached.</span></div>
+          </div>
+
+          <div style="height: 176px; box-sizing: border-box; display: flex; flex-direction: column; gap: 7px">
+            <div style="height: 34px; box-sizing: border-box; background: #216B78; border-radius: 7px; padding: 0 11px; display: flex; align-items: center"><span style="font-size: 12.5px; font-weight: 600; color: #FFFFFF">Traceability &amp; early-warning agent</span></div>
+            <div style="padding: 0 2px"><span style="font-size: 12px; line-height: 1.45; color: #3F4A52">Links every claim to lot, shift and defect code, then clusters the failures and opens the 8D.</span></div>
+          </div>
+
+          <div style="height: 176px; box-sizing: border-box; display: flex; flex-direction: column; gap: 7px">
+            <div style="height: 34px; box-sizing: border-box; background: #216B78; border-radius: 7px; padding: 0 11px; display: flex; align-items: center"><span style="font-size: 12.5px; font-weight: 600; color: #FFFFFF">Recovery agent</span></div>
+            <div style="padding: 0 2px"><span style="font-size: 12px; line-height: 1.45; color: #3F4A52">Drafts the chargeback under the sub-supplier&#39;s contract and tracks it to settlement.</span></div>
+          </div>
+
+          <div style="height: 176px; box-sizing: border-box; display: flex; flex-direction: column; gap: 7px">
+            <div style="height: 34px; box-sizing: border-box; background: #216B78; border-radius: 7px; padding: 0 11px; display: flex; align-items: center"><span style="font-size: 12.5px; font-weight: 600; color: #FFFFFF">Finance &amp; reconciliation agent</span></div>
+            <div style="padding: 0 2px"><span style="font-size: 12px; line-height: 1.45; color: #3F4A52">Matches every debit note to the approved claim, reports net cost, and tests a reserve before you set it.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec" id="sec-record">
+        <div style="height: 54px; box-sizing: border-box; background: #15232F; border-radius: 9px; padding: 0 14px; display: flex; align-items: center; gap: 14px">
+          <div style="flex-shrink: 0; width: 118px"><span style="font-size: 10px; font-weight: 600; letter-spacing: 0.12em; color: #E4B44C">ONE WARRANTY<br>SOURCE OF TRUTH</span></div>
+          <div style="flex-grow: 1; display: flex; gap: 7px">
+            <div style="flex-grow: 1; height: 30px; box-sizing: border-box; border: 1px solid #3C5162; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #DCE6EB; font-size: 11.5px; font-weight: 500">Claim</div>
+            <div style="flex-grow: 1; height: 30px; box-sizing: border-box; border: 1px solid #3C5162; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #DCE6EB; font-size: 11.5px; font-weight: 500">VIN</div>
+            <div style="flex-grow: 1; height: 30px; box-sizing: border-box; border: 1px solid #3C5162; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #DCE6EB; font-size: 11.5px; font-weight: 500">Contract</div>
+            <div style="flex-grow: 1; height: 30px; box-sizing: border-box; border: 1px solid #3C5162; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #DCE6EB; font-size: 11.5px; font-weight: 500">Lot</div>
+            <div style="flex-grow: 1; height: 30px; box-sizing: border-box; border: 1px solid #3C5162; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #DCE6EB; font-size: 11.5px; font-weight: 500">Supplier</div>
+            <div style="flex-grow: 1; height: 30px; box-sizing: border-box; border: 1px solid #3C5162; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #DCE6EB; font-size: 11.5px; font-weight: 500">Debit</div>
+            <div style="flex-grow: 1; height: 30px; box-sizing: border-box; border: 1px solid #3C5162; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #DCE6EB; font-size: 11.5px; font-weight: 500">Cost</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec" id="sec-connectors">
+        <span style="font-size: 11.5px; line-height: 1.4; color: #5E6A72">Connected to OEM EDI, MES, QMS, the supplier portal and the ERP.</span>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="sec" id="sec-outcome">
+    <div style="display: flex; justify-content: center; padding-bottom: 6px">
+      <svg width="16" height="34" viewBox="0 0 16 34" preserveAspectRatio="none" aria-hidden="true" style="width: 16px; height: 34px; overflow: visible; fill: none; stroke: #15232F; stroke-width: 4.5; stroke-linecap: round; stroke-linejoin: round"><defs><marker id="awi-arrow-head" orient="auto" markerWidth="5" markerHeight="5" refX="2" refY="2" overflow="visible"><path d="M0 0 L4 2 L0 4 Z" fill="#15232F" stroke="none" style="stroke: none; fill: #15232F"/></marker></defs><path d="M 8 0 L 8 25" marker-end="url(#awi-arrow-head)"></path></svg>
+    </div>
+    <div style="background: #E4B44C; border-radius: 10px; padding: 10px 15px">
+      <div style="font-size: 9.5px; font-weight: 600; letter-spacing: 0.13em; color: #5A4310">THE OUTCOME &middot; BASELINED AND IMPROVEMENT TRACKED</div>
+      <div style="margin-top: 8px; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px">
+        <div style="display: flex; gap: 7px; align-items: flex-start"><span style="flex-shrink: 0; width: 18px; height: 18px; border-radius: 9px; background: #15232F; color: #FFFFFF; font-size: 10.5px; font-weight: 700; display: flex; align-items: center; justify-content: center">1</span><span style="font-size: 12px; line-height: 1.3; color: #15232F"><b>Cost avoidance</b><br><span style="font-size: 10.5px; color: #4A412A">Invalid claims disputed, not paid</span></span></div>
+        <div style="display: flex; gap: 7px; align-items: flex-start"><span style="flex-shrink: 0; width: 18px; height: 18px; border-radius: 9px; background: #15232F; color: #FFFFFF; font-size: 10.5px; font-weight: 700; display: flex; align-items: center; justify-content: center">2</span><span style="font-size: 12px; line-height: 1.3; color: #15232F"><b>Supplier recovery</b><br><span style="font-size: 10.5px; color: #4A412A">Revenue leakage closed</span></span></div>
+        <div style="display: flex; gap: 7px; align-items: flex-start"><span style="flex-shrink: 0; width: 18px; height: 18px; border-radius: 9px; background: #15232F; color: #FFFFFF; font-size: 10.5px; font-weight: 700; display: flex; align-items: center; justify-content: center">3</span><span style="font-size: 12px; line-height: 1.3; color: #15232F"><b>Early intervention</b><br><span style="font-size: 10.5px; color: #4A412A">At-risk lots contained early</span></span></div>
+        <div style="display: flex; gap: 7px; align-items: flex-start"><span style="flex-shrink: 0; width: 18px; height: 18px; border-radius: 9px; background: #15232F; color: #FFFFFF; font-size: 10.5px; font-weight: 700; display: flex; align-items: center; justify-content: center">4</span><span style="font-size: 12px; line-height: 1.3; color: #15232F"><b>Claim-to-debit recon</b><br><span style="font-size: 10.5px; color: #4A412A">OEM debits match approved claims</span></span></div>
+        <div style="display: flex; gap: 7px; align-items: flex-start"><span style="flex-shrink: 0; width: 18px; height: 18px; border-radius: 9px; background: #15232F; color: #FFFFFF; font-size: 10.5px; font-weight: 700; display: flex; align-items: center; justify-content: center">5</span><span style="font-size: 12px; line-height: 1.3; color: #15232F"><b>True profitability</b><br><span style="font-size: 10.5px; color: #4A412A">By product, plant, region, OEM</span></span></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+<div id="hud"><span>step</span><b id="hud-val">all</b></div>
+
+<script>
+(function () {
+  'use strict';
+
+  var SECTIONS = ['title', 'stages', 'roles', 'swarm', 'record', 'connectors', 'outcome'];
+  var SEQUENCE = ['all', 'title', 'stages', 'roles', 'swarm', 'record', 'connectors', 'outcome'];
+
+  var params = new URLSearchParams(window.location.search);
+  var dim = parseFloat(params.get('dim'));
+  if (isNaN(dim) || dim < 0 || dim > 1) { dim = 0.14; }
+
+  var current = 'all';
+  var hud = document.getElementById('hud');
+  var hudVal = document.getElementById('hud-val');
+
+  function apply(name) {
+    current = (name === 'all' || SECTIONS.indexOf(name) !== -1) ? name : 'all';
+    for (var i = 0; i < SECTIONS.length; i++) {
+      var el = document.getElementById('sec-' + SECTIONS[i]);
+      if (!el) { continue; }
+      var lit = (current === 'all' || current === SECTIONS[i]);
+      el.style.opacity = lit ? '1' : String(dim);
+    }
+    if (hudVal) { hudVal.textContent = current; }
+    document.documentElement.setAttribute('data-step', current);
+    return current;
+  }
+
+  function step(delta) {
+    var i = SEQUENCE.indexOf(current);
+    if (i === -1) { i = 0; }
+    i = (i + delta + SEQUENCE.length) % SEQUENCE.length;
+    return apply(SEQUENCE[i]);
+  }
+
+  function scaleTo(factor) {
+    var stage = document.getElementById('stage');
+    var shell = document.getElementById('shell');
+    stage.style.transform = 'scale(' + factor + ')';
+    shell.style.width = (1280 * factor) + 'px';
+    shell.style.height = (720 * factor) + 'px';
+  }
+
+  // Public API for an external driver (Playwright, a recorder, a timeline).
+  window.AWI = {
+    sections: SECTIONS.slice(),
+    sequence: SEQUENCE.slice(),
+    set: apply,
+    next: function () { return step(1); },
+    prev: function () { return step(-1); },
+    current: function () { return current; },
+    setDim: function (v) {
+      var n = parseFloat(v);
+      if (!isNaN(n) && n >= 0 && n <= 1) { dim = n; apply(current); }
+      return dim;
+    },
+    scale: scaleTo
+  };
+
+  // Manual stepping while recording off the screen.
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); step(1); }
+    else if (e.key === 'ArrowLeft') { e.preventDefault(); step(-1); }
+    else if (e.key === 'Home') { e.preventDefault(); apply('all'); }
+  });
+
+  var scale = parseFloat(params.get('scale'));
+  var width = parseFloat(params.get('w'));
+  if (!isNaN(width) && width > 0) { scale = width / 1280; }
+  if (!isNaN(scale) && scale > 0) { scaleTo(scale); }
+
+  if (params.get('ui') === '1' && hud) { hud.classList.add('on'); }
+
+  apply(params.get('s') || 'all');
+}());
+</script>
+
+</body>
+</html>

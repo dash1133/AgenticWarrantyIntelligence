@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agentic Warranty Intelligence &mdash; video</title>
+<style>
+  @font-face { font-family: "IBM Plex Sans"; font-style: normal; font-weight: 100 700;
+    src: url(/*FONT*/) format("woff2"); }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: #0B0B0B; overflow: hidden;
+    font-family: "IBM Plex Sans", system-ui, sans-serif; }
+  #wrap { position: absolute; inset: 0 0 64px 0; display: grid; place-items: center; }
+  body.nohud #wrap { inset: 0; }
+  #stage { position: relative; width: 1280px; height: 720px; overflow: hidden;
+    transform-origin: center center; background: #15232F; }
+  body.render #wrap { display: block; }
+  body.render #stage { transform: none !important; }
+  .layer { position: absolute; inset: 0; width: 1280px; height: 720px; visibility: hidden; }
+  .frame { display: block; width: 1280px; height: 720px; }
+
+  /* Captions: the voiceover line, for review until the final recording exists. */
+  #cc { position: absolute; left: 0; right: 0; bottom: 20px; z-index: 10;
+    display: flex; justify-content: center; pointer-events: none; }
+  #cc span { max-width: 1040px; background: rgba(10, 16, 22, .86); color: #FFFFFF;
+    font-size: 22px; line-height: 1.38; font-weight: 500; padding: 9px 18px;
+    border-radius: 6px; text-align: center; }
+  body.nocc #cc { display: none; }
+
+  #hud { position: fixed; left: 0; right: 0; bottom: 0; height: 64px; padding: 0 18px;
+    display: flex; align-items: center; gap: 12px; background: #111; color: #D8D8D8; font-size: 13px; }
+  body.nohud #hud, body.render #hud { display: none; }
+  #hud button { font: inherit; font-weight: 600; color: #1A1A1A; background: #E4B44C;
+    border: 0; border-radius: 4px; padding: 7px 13px; cursor: pointer; }
+  #hud button.ghost { background: #2A2A2A; color: #E8E8E8; }
+  #hud input[type=range] { flex: 1 1 auto; accent-color: #E4B44C; }
+  #time { font-variant-numeric: tabular-nums; color: #9A9A9A; min-width: 104px; }
+  #beat { font-weight: 600; color: #FFFFFF; min-width: 210px; }
+  #keys { color: #6E6E6E; }
+</style>
+</head>
+<body>
+
+<div id="wrap"><div id="stage">
+
+<!-- BEAT 1 · The problem -->
+<div class="layer" id="L-b1">
+<div style="width: 1280px; height: 720px; background: #15232F; color: #FFFFFF; padding: 52px 64px 96px; display: flex; flex-direction: column">
+  <div data-in="1" class="rise" style="font-size: 13px; letter-spacing: .14em; font-weight: 600; color: #E4B44C">THE WARRANTY TEAM TODAY</div>
+  <div data-in="1" class="rise" style="margin-top: 10px; font-size: 46px; font-weight: 700; letter-spacing: -.015em">Your warranty team is overwhelmed.</div>
+  <div style="flex: 1 1 auto; display: grid; grid-template-columns: 590px 1fr; gap: 52px; margin-top: 34px; min-height: 0">
+    <div style="display: flex; flex-direction: column">
+      <div data-in="2" style="font-size: 12px; letter-spacing: .14em; font-weight: 600; color: #8FA3B0; margin-bottom: 6px">WHAT THE TEAM FACES</div>
+      <div data-in="2" class="rise" style="display: flex; align-items: center; gap: 14px; padding: 11px 0; border-bottom: 1px solid #2A3D4C"><span style="flex: 0 0 10px; height: 10px; border-radius: 50%; background: #C2521C"></span><span style="font-size: 21px; color: #E6ECEF">The queue is bigger than the hours</span></div>
+      <div data-in="3" class="rise" style="display: flex; align-items: center; gap: 14px; padding: 11px 0; border-bottom: 1px solid #2A3D4C"><span style="flex: 0 0 10px; height: 10px; border-radius: 50%; background: #C2521C"></span><span style="font-size: 21px; color: #E6ECEF">Validating inputs takes more time than research</span></div>
+      <div data-in="4" class="rise" style="display: flex; align-items: center; gap: 14px; padding: 11px 0; border-bottom: 1px solid #2A3D4C"><span style="flex: 0 0 10px; height: 10px; border-radius: 50%; background: #C2521C"></span><span style="font-size: 21px; color: #E6ECEF">Deadlines are missed</span></div>
+      <div data-in="5" class="rise" style="display: flex; align-items: center; gap: 14px; padding: 11px 0; border-bottom: 1px solid #2A3D4C"><span style="flex: 0 0 10px; height: 10px; border-radius: 50%; background: #C2521C"></span><span style="font-size: 21px; color: #E6ECEF">Cases take too long to resolve</span></div>
+      <div data-in="6" class="rise" style="display: flex; align-items: center; gap: 14px; padding: 11px 0; border-bottom: 1px solid #2A3D4C"><span style="flex: 0 0 10px; height: 10px; border-radius: 50%; background: #C2521C"></span><span style="font-size: 21px; color: #E6ECEF">Appeals are lost</span></div>
+      <div data-in="7" class="rise" style="display: flex; align-items: center; gap: 14px; padding: 11px 0"><span style="flex: 0 0 10px; height: 10px; border-radius: 50%; background: #C2521C"></span><span style="font-size: 21px; color: #E6ECEF">Invalid claims go uncontested</span></div>
+    </div>
+    <div style="display: flex; flex-direction: column; min-width: 0">
+      <div data-in="8" style="font-size: 12px; letter-spacing: .14em; font-weight: 600; color: #E4B44C; margin-bottom: 14px">THE IMPACT</div>
+      <div style="flex: 1 1 auto; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 16px">
+        <div data-in="9" class="rise" style="background: #1D3040; border: 1px solid #3C5162; border-radius: 10px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between"><span style="font-size: 12px; letter-spacing: .14em; font-weight: 600; color: #E4B44C">COST</span><span style="font-size: 24px; line-height: 1.25; font-weight: 600">Warranty costs increase</span></div>
+        <div data-in="10" class="rise" style="background: #1D3040; border: 1px solid #3C5162; border-radius: 10px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between"><span style="font-size: 12px; letter-spacing: .14em; font-weight: 600; color: #E4B44C">RECOVERY</span><span style="font-size: 24px; line-height: 1.25; font-weight: 600">Supplier recovery is missed</span></div>
+        <div data-in="11" class="rise" style="background: #1D3040; border: 1px solid #3C5162; border-radius: 10px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between"><span style="font-size: 12px; letter-spacing: .14em; font-weight: 600; color: #E4B44C">QUALITY</span><span style="font-size: 24px; line-height: 1.25; font-weight: 600">Recalls arrive without warning</span></div>
+        <div data-in="12" class="rise" style="background: #1D3040; border: 1px solid #3C5162; border-radius: 10px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between"><span style="font-size: 12px; letter-spacing: .14em; font-weight: 600; color: #E4B44C">LEVERAGE</span><span style="font-size: 24px; line-height: 1.25; font-weight: 600">Negotiation leverage is lost</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- BEAT 2 · Reporting is not fixing -->
+<div class="layer" id="L-b2">
+<div style="width: 1280px; height: 720px; background: #15232F; color: #FFFFFF; padding: 56px 64px 100px; display: grid; grid-template-columns: 660px 1fr; gap: 56px; align-items: center">
+  <div data-in="1" class="rise" style="background: #FBF8F1; border-radius: 12px; overflow: hidden; color: #15232F">
+    <div style="background: #E9E3D6; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between">
+      <span style="font-size: 16px; font-weight: 600">Warranty system &middot; issues report</span>
+      <span style="font-size: 12px; letter-spacing: .12em; font-weight: 600; color: #7A8690">THIS MONTH</span>
+    </div>
+    <div style="padding: 6px 20px 12px">
+      <div style="display: grid; grid-template-columns: 1fr 120px 120px; gap: 12px; padding: 10px 0; border-bottom: 1px solid #DED7C8; font-size: 11.5px; letter-spacing: .12em; font-weight: 600; color: #7A8690"><span>ISSUE</span><span>REPORTED</span><span>FIXED</span></div>
+      <div data-in="2" style="display: grid; grid-template-columns: 1fr 120px 120px; gap: 12px; align-items: center; padding: 11px 0; border-bottom: 1px solid #ECE6D9"><span style="font-size: 18px">Invalid claims uncontested</span><span style="font-size: 14px; font-weight: 600; color: #216B78">&#10003; Reported</span><span data-in="8" style="font-size: 14px; font-weight: 600; color: #C2521C">Not fixed</span></div>
+      <div data-in="3" style="display: grid; grid-template-columns: 1fr 120px 120px; gap: 12px; align-items: center; padding: 11px 0; border-bottom: 1px solid #ECE6D9"><span style="font-size: 18px">Deadlines missed</span><span style="font-size: 14px; font-weight: 600; color: #216B78">&#10003; Reported</span><span data-in="8" style="font-size: 14px; font-weight: 600; color: #C2521C">Not fixed</span></div>
+      <div data-in="4" style="display: grid; grid-template-columns: 1fr 120px 120px; gap: 12px; align-items: center; padding: 11px 0; border-bottom: 1px solid #ECE6D9"><span style="font-size: 18px">Appeals lost</span><span style="font-size: 14px; font-weight: 600; color: #216B78">&#10003; Reported</span><span data-in="8" style="font-size: 14px; font-weight: 600; color: #C2521C">Not fixed</span></div>
+      <div data-in="5" style="display: grid; grid-template-columns: 1fr 120px 120px; gap: 12px; align-items: center; padding: 11px 0; border-bottom: 1px solid #ECE6D9"><span style="font-size: 18px">Supplier recovery missed</span><span style="font-size: 14px; font-weight: 600; color: #216B78">&#10003; Reported</span><span data-in="8" style="font-size: 14px; font-weight: 600; color: #C2521C">Not fixed</span></div>
+      <div data-in="6" style="display: grid; grid-template-columns: 1fr 120px 120px; gap: 12px; align-items: center; padding: 11px 0; border-bottom: 1px solid #ECE6D9"><span style="font-size: 18px">Recalls without warning</span><span style="font-size: 14px; font-weight: 600; color: #216B78">&#10003; Reported</span><span data-in="8" style="font-size: 14px; font-weight: 600; color: #C2521C">Not fixed</span></div>
+      <div data-in="7" style="display: grid; grid-template-columns: 1fr 120px 120px; gap: 12px; align-items: center; padding: 11px 0"><span style="font-size: 18px">Warranty costs rising</span><span style="font-size: 14px; font-weight: 600; color: #216B78">&#10003; Reported</span><span data-in="8" style="font-size: 14px; font-weight: 600; color: #C2521C">Not fixed</span></div>
+    </div>
+  </div>
+  <div style="display: flex; flex-direction: column; gap: 6px">
+    <span data-in="9" class="rise" style="font-size: 40px; line-height: 1.2; font-weight: 700; letter-spacing: -.01em">Reporting on a problem</span>
+    <span data-in="10" class="rise" style="font-size: 40px; line-height: 1.2; font-weight: 700; letter-spacing: -.01em; color: #E4B44C">is not the same as fixing it.</span>
+  </div>
+</div>
+</div>
+
+<!-- BEAT 3 · Introducing -->
+<div class="layer" id="L-b3">
+<div style="width: 1280px; height: 720px; background: #15232F; color: #FFFFFF; padding: 0 96px 90px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center">
+  <div data-in="1" class="rise" style="font-size: 14px; letter-spacing: .2em; font-weight: 600; color: #E4B44C">INTRODUCING</div>
+  <div data-in="1" class="rise" style="margin-top: 16px; font-size: 68px; line-height: 1.08; font-weight: 700; letter-spacing: -.02em">Agentic Warranty Intelligence</div>
+  <div data-in="2" class="rise" style="margin-top: 22px; font-size: 25px; line-height: 1.4; color: #DCE6EB">Reimagining how warranty claims are handled, using AI</div>
+  <div data-in="3" class="rise" style="margin-top: 44px; display: flex; gap: 12px">
+    <span style="border: 1px solid #3C5162; border-radius: 6px; padding: 9px 16px; font-size: 15px; font-weight: 500; color: #DCE6EB">Claims hub</span>
+    <span style="border: 1px solid #3C5162; border-radius: 6px; padding: 9px 16px; font-size: 15px; font-weight: 500; color: #DCE6EB">Plant</span>
+    <span style="border: 1px solid #3C5162; border-radius: 6px; padding: 9px 16px; font-size: 15px; font-weight: 500; color: #DCE6EB">Procurement</span>
+    <span style="border: 1px solid #3C5162; border-radius: 6px; padding: 9px 16px; font-size: 15px; font-weight: 500; color: #DCE6EB">Finance</span>
+  </div>
+</div>
+</div>
+
+<!-- System overview (beat 4, start of beat 10) · from source/agentic-warranty-intelligence.html -->
+<div class="layer" id="L-ov">
+<!--OVERVIEW-->
+</div>
+
+<!-- Beats 5 to 9 · from source/warrantyai-video-frames.html -->
+<!--FRAMES-->
+
+<!-- BEAT 10 · Close -->
+<div class="layer" id="L-b10">
+<div style="width: 1280px; height: 720px; background: #15232F; color: #FFFFFF; padding: 64px 64px 100px; display: flex; flex-direction: column">
+  <div data-in="1" style="font-size: 13px; letter-spacing: .14em; font-weight: 600; color: #E4B44C">WHAT CHANGES</div>
+  <div style="margin-top: 18px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px">
+    <div data-in="1" class="rise" style="background: #1D3040; border: 1px solid #3C5162; border-radius: 10px; padding: 22px 20px; height: 170px; display: flex; flex-direction: column; justify-content: space-between"><span style="font-size: 34px; font-weight: 700; color: #E4B44C">&darr;</span><span style="font-size: 25px; line-height: 1.22; font-weight: 600">Reduce recalls</span></div>
+    <div data-in="2" class="rise" style="background: #1D3040; border: 1px solid #3C5162; border-radius: 10px; padding: 22px 20px; height: 170px; display: flex; flex-direction: column; justify-content: space-between"><span style="font-size: 34px; font-weight: 700; color: #E4B44C">&darr;</span><span style="font-size: 25px; line-height: 1.22; font-weight: 600">Reduce warranty costs</span></div>
+    <div data-in="3" class="rise" style="background: #1D3040; border: 1px solid #3C5162; border-radius: 10px; padding: 22px 20px; height: 170px; display: flex; flex-direction: column; justify-content: space-between"><span style="font-size: 34px; font-weight: 700; color: #E4B44C">&uarr;</span><span style="font-size: 25px; line-height: 1.22; font-weight: 600">Increase supplier recovery</span></div>
+    <div data-in="4" class="rise" style="background: #1D3040; border: 1px solid #3C5162; border-radius: 10px; padding: 22px 20px; height: 170px; display: flex; flex-direction: column; justify-content: space-between"><span style="font-size: 34px; font-weight: 700; color: #E4B44C">&uarr;</span><span style="font-size: 25px; line-height: 1.22; font-weight: 600">Improve product quality</span></div>
+  </div>
+  <div style="flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 26px">
+    <div data-in="5" class="rise" style="font-size: 44px; line-height: 1.15; font-weight: 700; letter-spacing: -.015em">Implement Agentic Warranty Intelligence today.</div>
+    <div data-in="6" class="rise" style="background: #E4B44C; color: #15232F; border-radius: 8px; padding: 16px 30px; font-size: 24px; font-weight: 700">Ask for a demo</div>
+  </div>
+</div>
+</div>
+
+<div id="cc"><span></span></div>
+</div></div>
+
+<div id="hud">
+  <button id="play" type="button">Play</button>
+  <button id="prev" class="ghost" type="button">&larr; Beat</button>
+  <button id="next" class="ghost" type="button">Beat &rarr;</button>
+  <span id="beat">&nbsp;</span>
+  <input id="scrub" type="range" min="0" max="1000" value="0">
+  <span id="time">&nbsp;</span>
+  <button id="ccbtn" class="ghost" type="button">Captions on</button>
+  <span id="keys">space play &middot; &larr; &rarr; beat &middot; C captions &middot; H hide</span>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  // ---------------------------------------------------------------------------
+  // TIMELINE. One cue per voiceover sentence; the caption is the cue text.
+  // Durations are estimated from word count (WPS). After the final recording,
+  // set `dur` on any cue (seconds) to lock it to the real read.
+  //   in:   items on that layer revealed by this cue, [key, fraction of cue]
+  //   lits: overview sections lit, [[fraction, 'all' | [names]], ...]
+  // ---------------------------------------------------------------------------
+  var WPS = 2.9, PAD = 0.2, MIN = 1.3, GAP = 0.35, LEAD = 0.5;
+  var FADE = 0.4, XFADE = 0.55, LITFADE = 0.45, DIM = 0.16;
+
+  var BEATS = [
+    { label: 'Beat 1 · The problem', layer: 'b1', cues: [
+      { text: 'Your warranty team is overwhelmed.', in: [[1, 0]] },
+      { text: 'The queue is bigger than the hours.', in: [[2, 0]] },
+      { text: 'Validating inputs takes more time than researching claims.', in: [[3, 0]] },
+      { text: 'Deadlines are missed.', in: [[4, 0]] },
+      { text: 'Cases take too long to resolve.', in: [[5, 0]] },
+      { text: 'Appeals are lost.', in: [[6, 0]] },
+      { text: 'Invalid claims go uncontested.', in: [[7, 0]] },
+      { text: 'And this has a huge impact.', in: [[8, 0]] },
+      { text: 'Warranty costs increase.', in: [[9, 0]] },
+      { text: 'Supplier recovery is missed.', in: [[10, 0]] },
+      { text: 'Recalls arrive without warning.', in: [[11, 0]] },
+      { text: 'Negotiation leverage is lost.', in: [[12, 0]] }
+    ]},
+    { label: 'Beat 2 · Reporting is not fixing', layer: 'b2', cues: [
+      { text: 'Warranty systems report all of them.', dur: 3.2,
+        in: [[1, 0], [2, .15], [3, .27], [4, .39], [5, .51], [6, .63], [7, .75]] },
+      { text: 'Reporting on a problem is not the same as fixing it.', hold: 1,
+        in: [[9, 0], [10, .35], [8, .55]] }
+    ]},
+    { label: 'Beat 3 · Introducing', layer: 'b3', cues: [
+      { text: 'Introducing Agentic Warranty Intelligence.', hold: .6, in: [[1, 0]] },
+      { text: 'We are reimagining how warranty claims are handled using AI.', hold: .6,
+        in: [[2, 0], [3, .6]] }
+    ]},
+    { label: 'Beat 4 · The agent swarm', layer: 'ov', cues: [
+      { text: 'Agentic Warranty Intelligence deploys a swarm of agents, each paired with the person who owns that part of the process.',
+        lits: [[0, ['title', 'stages', 'swarm']], [.55, ['stages', 'roles', 'swarm']]] },
+      { text: 'The claims analyst, the quality engineer, purchasing and the controller each oversee agents that do the routine drafting, collecting and presenting.',
+        lits: [[0, ['roles']], [.55, ['roles', 'swarm']]] },
+      { text: 'Each agent does its own task, but they all operate from one coherent data record.',
+        lits: [[0, ['swarm']], [.55, ['record']]] },
+      { text: 'The claim, the contract, the lot and the cost become one source of truth.',
+        lits: [[0, ['record']]] }
+    ]},
+    { label: 'Beat 5 · Claims hub', layer: 'f5', cues: [
+      { text: 'In the claims hub, every claim and debit note runs through six checks against the contract.', in: [[1, 0]] },
+      { text: 'When a check fails, the dispute agent drafts the challenge with the clause and the history attached.', in: [[2, 0]] },
+      { text: 'Your claims analyst reviews it and sends it.', in: [[3, 0]] }
+    ]},
+    { label: 'Beat 6 · Plant', layer: 'f6', cues: [
+      { text: 'At the plant, the early warning agent runs around the clock, linking every claim to lot, shift and defect code.', in: [[1, 0]] },
+      { text: 'When a pattern forms, it clusters the failures, opens the 8D and flags the lots at risk.', in: [[2, 0]] },
+      { text: 'Your quality engineer approves containment.', in: [[3, 0]] }
+    ]},
+    { label: 'Beat 7 · Procurement', layer: 'f7', cues: [
+      { text: 'In procurement, where a Tier 2 or Tier 3 part caused the failure, the recovery agent drafts the chargeback under that supplier’s contract.',
+        in: [[1, 0], [2, .5]] },
+      { text: 'The agent tracks recovery status through to settlement.', in: [[3, 0]] },
+      { text: 'Your purchasing lead approves the chargeback.', in: [[4, 0]] },
+      { text: 'Where the part is your own, the cost stays with you.', in: [[5, 0]] }
+    ]},
+    { label: 'Beat 8 · Finance', layer: 'f8', cues: [
+      { text: 'In finance, the reconciliation agent matches every OEM debit note to the approved claim and flags the variance.', in: [[1, 0]] },
+      { text: 'Your controller approves the posting.', in: [[2, 0]] },
+      { text: 'The agent then reports net cost by product, plant, region and OEM.', in: [[3, 0]] },
+      { text: 'That is your true warranty profitability.' },
+      { text: 'The same agent runs what-if scenarios on that record, so you can test a reserve before you set it.', in: [[4, 0]] }
+    ]},
+    { label: 'Beat 9 · Who decides', layer: 'f9', cues: [
+      { text: 'The agent swarm assists.', dur: 3.4, in: [[1, 0], [2, .18], [3, .36], [4, .54], [5, .78]] },
+      { text: 'Your people make the call.', hold: 1.8, in: [[6, 0]] }
+    ]},
+    { label: 'Beat 10 · Close', layer: 'ov', cues: [
+      { text: 'We will build the warranty system to your specification.', lits: [[0, 'all']] },
+      { text: 'It will be deployed in your environment and connected to your ERP, manufacturing, quality and supplier data sources.',
+        lits: [[0, ['record', 'connectors']]] },
+      { layer: 'b10', text: 'Reduce recalls. Reduce warranty costs. Increase supplier recovery. Improve product quality.',
+        in: [[1, 0], [2, .25], [3, .5], [4, .75]] },
+      { layer: 'b10', text: 'Implement Agentic Warranty Intelligence today. Ask for a demo.', hold: 3,
+        in: [[5, 0], [6, .6]] }
+    ]}
+  ];
+
+  // ---------------------------------------------------------------------------
+  // Build the flat cue list with start times.
+  // ---------------------------------------------------------------------------
+  var cues = [], t = LEAD;
+  BEATS.forEach(function (b, bi) {
+    b.start = t;
+    b.cues.forEach(function (c, ci) {
+      var words = c.text.trim().split(/\s+/).length;
+      var speak = c.dur || Math.max(MIN, words / WPS);
+      var dur = speak + PAD + (c.hold || 0) + (ci === b.cues.length - 1 ? GAP : 0);
+      cues.push({ beat: bi, layer: c.layer || b.layer, text: c.text, start: t, speak: speak,
+                  dur: dur, ins: c.in || [], lits: c.lits || null });
+      t += dur;
+    });
+  });
+  var DURATION = t;
+
+  // When each revealed item appears, per layer.
+  var revealAt = {};
+  cues.forEach(function (c) {
+    var m = revealAt[c.layer] = revealAt[c.layer] || {};
+    c.ins.forEach(function (p) { if (m[p[0]] == null) m[p[0]] = c.start + p[1] * c.speak; });
+  });
+
+  // Overview lighting events. A new run starts when the overview comes back on screen.
+  var ovEvents = [];
+  cues.forEach(function (c, i) {
+    if (c.layer !== 'ov') return;
+    var newRun = i === 0 || cues[i - 1].layer !== 'ov';
+    (c.lits || [[0, 'all']]).forEach(function (l, li) {
+      ovEvents.push({ time: c.start + l[0] * c.speak, set: l[1], fresh: newRun && li === 0 });
+    });
+  });
+  var OV_SECTIONS = ['title', 'stages', 'roles', 'swarm', 'record', 'connectors', 'outcome'];
+
+  // ---------------------------------------------------------------------------
+  // Tag the step units in the frames page with data-in = state number,
+  // following the reveal order of the original frames player.
+  // ---------------------------------------------------------------------------
+  function tagFrame(section) {
+    var left = section.querySelector('div[style*="flex: 0 0 740px"]');
+    if (!left) return;
+    var kids = [].slice.call(left.children);
+    var styleHas = function (s) { return function (k) { return (k.getAttribute('style') || '').indexOf(s) > -1; }; };
+    var kind = section.dataset.kind;
+    if (kind === 'steps') {
+      var box = kids.filter(styleHas('margin: auto 0'))[0];
+      [].slice.call(box.children).forEach(function (c, i) { c.dataset.in = Math.ceil(i / 2) + 1; });
+    } else if (kind === 'branch') {
+      var ifBand = kids.filter(styleHas('margin: auto 0 18px'))[0];
+      var box2 = kids.filter(function (k) { return k.getAttribute('style') === 'display: flex; flex-direction: column'; })[0];
+      var ifNot = kids.filter(styleHas('margin-top: 18px'))[0];
+      ifBand.dataset.in = 1;
+      [2, 3, 3, 4, 4].forEach(function (s, i) { box2.children[i].dataset.in = s; });
+      ifNot.dataset.in = 5;
+    } else if (kind === 'cards') {
+      var box3 = kids.filter(styleHas('margin: auto 0'))[0];
+      [].slice.call(box3.children).forEach(function (c, i) { c.dataset.in = i + 1; });
+      var tag = kids[kids.length - 1].children;
+      tag[0].dataset.in = 5;
+      tag[1].dataset.in = 6;
+      kids[kids.length - 1].style.borderTopColor = 'transparent';
+    }
+  }
+  var FRAME_LAYERS = { 'Beat 5': 'f5', 'Beat 6': 'f6', 'Beat 7': 'f7', 'Beat 8': 'f8', 'Beat 9': 'f9' };
+  [].slice.call(document.querySelectorAll('section.frame')).forEach(function (s) {
+    var id = FRAME_LAYERS[(s.dataset.label || '').split(' ·')[0]];
+    var wrap = document.createElement('div');
+    wrap.className = 'layer';
+    wrap.id = 'L-' + id;
+    s.parentNode.insertBefore(wrap, s);
+    wrap.appendChild(s);
+    tagFrame(s);
+  });
+  // Beat 9's rule above the tagline fades in with it instead of sitting alone.
+  var f9tag = document.querySelector('#L-f9 [data-in="5"]');
+  if (f9tag) f9tag.parentNode.dataset.rule = '1';
+
+  var layers = {};
+  [].slice.call(document.querySelectorAll('.layer')).forEach(function (el) {
+    layers[el.id.slice(2)] = { el: el, items: [].slice.call(el.querySelectorAll('[data-in]')) };
+  });
+
+  // ---------------------------------------------------------------------------
+  // Render any time t, deterministically (used for playback and for export).
+  // ---------------------------------------------------------------------------
+  var clamp = function (x) { return x < 0 ? 0 : x > 1 ? 1 : x; };
+  var ease = function (p) { return 1 - Math.pow(1 - p, 3); };
+  var ccSpan = document.querySelector('#cc span');
+  var ccEl = document.getElementById('cc');
+
+  function cueIndexAt(time) {
+    var i = 0;
+    for (var k = 0; k < cues.length; k++) { if (cues[k].start <= time) i = k; else break; }
+    return i;
+  }
+
+  function paintItems(id, time) {
+    var L = layers[id], m = revealAt[id] || {};
+    L.items.forEach(function (el) {
+      var at = m[el.dataset.in];
+      var p = at == null ? 0 : ease(clamp((time - at) / FADE));
+      el.style.opacity = p;
+      if (el.classList.contains('rise')) el.style.transform = 'translateY(' + ((1 - p) * 12).toFixed(2) + 'px)';
+    });
+    if (id === 'f9') {
+      var rule = L.el.querySelector('[data-rule]');
+      var at5 = m[5];
+      rule.style.borderTopColor = 'rgba(232, 82, 26, ' + (at5 == null ? 0 : ease(clamp((time - at5) / FADE))) + ')';
+    }
+  }
+
+  function litValue(set, name) { return set === 'all' || set.indexOf(name) > -1 ? 1 : DIM; }
+
+  function paintOverview(time) {
+    var cur = -1;
+    for (var k = 0; k < ovEvents.length; k++) { if (ovEvents[k].time <= time) cur = k; else break; }
+    if (cur < 0) cur = 0;
+    var e = ovEvents[cur], prev = (e.fresh || cur === 0) ? e : ovEvents[cur - 1];
+    var p = ease(clamp((time - e.time) / LITFADE));
+    OV_SECTIONS.forEach(function (name) {
+      var el = document.getElementById('sec-' + name);
+      if (!el) return;
+      var a = litValue(prev.set, name), b = litValue(e.set, name);
+      el.style.opacity = (a + (b - a) * p).toFixed(3);
+    });
+  }
+
+  function render(time) {
+    var idx = cueIndexAt(time), cue = cues[idx], cur = cue.layer;
+    var r = idx;
+    while (r > 0 && cues[r - 1].layer === cur) r--;
+    var prevLayer = r > 0 ? cues[r - 1].layer : null;
+    var x = prevLayer ? ease(clamp((time - cues[r].start) / XFADE)) : 1;
+
+    Object.keys(layers).forEach(function (id) {
+      var el = layers[id].el;
+      if (id === cur) {
+        el.style.visibility = 'visible'; el.style.opacity = x; el.style.zIndex = 2;
+      } else if (id === prevLayer && x < 1) {
+        el.style.visibility = 'visible'; el.style.opacity = 1; el.style.zIndex = 1;
+      } else {
+        el.style.visibility = 'hidden';
+        return;
+      }
+      if (id === 'ov') paintOverview(time); else paintItems(id, time);
+    });
+
+    var inSpeech = time >= cue.start && time < cue.start + cue.dur;
+    ccSpan.textContent = cue.text;
+    ccEl.style.opacity = inSpeech ? clamp((time - cue.start) / 0.15) : 0;
+    return { cue: idx, beat: cue.beat };
+  }
+
+  // ---------------------------------------------------------------------------
+  // Player.
+  // ---------------------------------------------------------------------------
+  var params = new URLSearchParams(location.search);
+  if (params.get('render') === '1') document.body.classList.add('render');
+  if (params.get('cc') === '0') document.body.classList.add('nocc');
+
+  var now = parseFloat(params.get('t')) || 0, playing = false, t0 = 0, n0 = 0;
+  var playBtn = document.getElementById('play'), scrub = document.getElementById('scrub');
+  var timeEl = document.getElementById('time'), beatEl = document.getElementById('beat');
+  var ccBtn = document.getElementById('ccbtn');
+
+  function fmt(s) { var m = Math.floor(s / 60); var r = s - m * 60; return m + ':' + (r < 10 ? '0' : '') + r.toFixed(1); }
+
+  function seek(time) {
+    now = Math.max(0, Math.min(DURATION, time));
+    var info = render(now);
+    beatEl.textContent = BEATS[info.beat].label;
+    timeEl.textContent = fmt(now) + ' / ' + fmt(DURATION);
+    scrub.value = Math.round(now / DURATION * 1000);
+    return info;
+  }
+
+  function tick(ms) {
+    if (!playing) return;
+    var time = t0 + (ms - n0) / 1000;
+    if (time >= DURATION) { seek(DURATION); pause(); return; }
+    seek(time);
+    requestAnimationFrame(tick);
+  }
+  function play() {
+    if (now >= DURATION) now = 0;
+    playing = true; t0 = now; n0 = performance.now();
+    playBtn.textContent = 'Pause';
+    requestAnimationFrame(tick);
+  }
+  function pause() { playing = false; playBtn.textContent = 'Play'; }
+  function jumpBeat(d) {
+    var b = cues[cueIndexAt(now)].beat;
+    if (d < 0 && now - BEATS[b].start > 1) d = 0;
+    var nb = Math.max(0, Math.min(BEATS.length - 1, b + d));
+    var wasPlaying = playing; pause(); seek(BEATS[nb].start); if (wasPlaying) play();
+  }
+  function toggleCC() {
+    document.body.classList.toggle('nocc');
+    ccBtn.textContent = document.body.classList.contains('nocc') ? 'Captions off' : 'Captions on';
+  }
+
+  playBtn.addEventListener('click', function () { playing ? pause() : play(); });
+  document.getElementById('prev').addEventListener('click', function () { jumpBeat(-1); });
+  document.getElementById('next').addEventListener('click', function () { jumpBeat(1); });
+  ccBtn.addEventListener('click', toggleCC);
+  scrub.addEventListener('input', function () {
+    var wasPlaying = playing; pause(); seek(scrub.value / 1000 * DURATION); if (wasPlaying) play();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === ' ') { e.preventDefault(); playing ? pause() : play(); }
+    else if (e.key === 'ArrowRight') { e.preventDefault(); jumpBeat(1); }
+    else if (e.key === 'ArrowLeft') { e.preventDefault(); jumpBeat(-1); }
+    else if (e.key === 'c' || e.key === 'C') toggleCC();
+    else if (e.key === 'h' || e.key === 'H') { document.body.classList.toggle('nohud'); fit(); }
+  });
+
+  function fit() {
+    if (document.body.classList.contains('render')) return;
+    var w = document.getElementById('wrap');
+    var s = Math.min(w.clientWidth / 1280, w.clientHeight / 720);
+    document.getElementById('stage').style.transform = 'scale(' + s + ')';
+  }
+  window.addEventListener('resize', fit);
+  fit();
+  seek(now);
+
+  // For export and for retiming.
+  window.AWV = {
+    duration: DURATION,
+    seek: function (time) { return seek(time); },
+    cues: cues.map(function (c) {
+      return { beat: BEATS[c.beat].label, start: +c.start.toFixed(2), dur: +c.dur.toFixed(2), text: c.text };
+    })
+  };
+}());
+</script>
+</body>
+</html>

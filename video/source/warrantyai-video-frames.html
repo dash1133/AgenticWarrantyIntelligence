@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agentic Warranty Intelligence &mdash; video frames</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: #0B0B0B;
+    font-family: "IBM Plex Sans", system-ui, sans-serif; overflow: hidden; }
+  #stage { position: absolute; inset: 0; display: grid; place-items: center;
+    padding-bottom: 56px; }
+  body.nohud #stage { padding-bottom: 0; }
+  #scaler { width: 1280px; height: 720px; transform-origin: center center; }
+  .frame { display: none; width: 1280px; height: 720px; }
+  .frame.on { display: block; }
+  #hud { position: fixed; left: 0; right: 0; bottom: 0; padding: 14px 20px;
+    display: flex; align-items: center; gap: 16px; background: rgba(10,10,10,.92);
+    color: #D8D8D8; font-size: 13px; transition: opacity .25s; }
+  #hud.hide { opacity: 0; pointer-events: none; }
+  #hud button { font: inherit; font-weight: 600; color: #1A1A1A; background: #F5C842;
+    border: 0; border-radius: 3px; padding: 7px 14px; cursor: pointer; }
+  #hud button.ghost { background: #2A2A2A; color: #E8E8E8; }
+  #pos { font-variant-numeric: tabular-nums; color: #9A9A9A; }
+  #label { font-weight: 600; color: #FFFFFF; }
+  #bar { flex: 1 1 auto; height: 3px; background: #2A2A2A; border-radius: 2px; overflow: hidden; }
+  #fill { height: 100%; width: 0; background: #E8521A; transition: width .2s; }
+  #keys { color: #6E6E6E; }
+</style>
+</head>
+<body>
+
+<div id="stage"><div id="scaler">
+<section class="frame" data-kind="steps" data-states="3" data-label="Beat 5 &middot; Claims hub">
+<div style="width: 1280px; height: 720px; box-sizing: border-box; background: #FAF3EA; display: flex; flex-direction: column">
+
+  <div style="flex: 0 0 auto; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); background: #FFFFFF; border-bottom: 1px solid #E5DCCE">
+    <div style="background: #1A1A1A; padding: 19px 26px; display: flex; align-items: center; gap: 12px">
+      <span style="width: 9px; height: 9px; border-radius: 50%; background: #F5C842"></span>
+      <span style="font-size: 18px; font-weight: 600; color: #FAF3EA">Claims hub</span>
+    </div>
+    <div style="padding: 19px 26px; display: flex; align-items: center">
+      <span style="font-size: 18px; font-weight: 500; color: #A1968A">Plant</span>
+    </div>
+    <div style="padding: 19px 26px; display: flex; align-items: center">
+      <span style="font-size: 18px; font-weight: 500; color: #A1968A">Procurement</span>
+    </div>
+    <div style="padding: 19px 26px; display: flex; align-items: center">
+      <span style="font-size: 18px; font-weight: 500; color: #A1968A">Finance</span>
+    </div>
+  </div>
+
+  <div style="flex: 1 1 auto; display: flex; gap: 30px; padding: 34px 36px 32px; min-height: 0">
+
+    <div style="flex: 0 0 740px; display: flex; flex-direction: column; min-width: 0">
+
+      <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 26px">
+        <h2 style="margin: 0; font-size: 15px; letter-spacing: 1.5px; font-weight: 600; color: #6B6257">HOW A CLAIM IS WORKED</h2>
+        <div style="display: flex; align-items: center; gap: 16px">
+          <span style="display: inline-flex; align-items: center; gap: 7px; font-size: 13px; color: #6B6257">
+            <span style="width: 11px; height: 11px; border-radius: 50%; background: #00A89D"></span>Agent
+          </span>
+          <span style="display: inline-flex; align-items: center; gap: 7px; font-size: 13px; color: #6B6257">
+            <span style="width: 11px; height: 11px; border-radius: 50%; background: #C4430F"></span>Your team
+          </span>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; margin: auto 0">
+
+        <div style="display: flex; gap: 20px">
+          <div style="flex: 0 0 36px; display: flex; flex-direction: column; align-items: center">
+            <span style="width: 36px; height: 36px; border-radius: 50%; background: #00A89D; color: #04221F; font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: center">1</span>
+          </div>
+          <div style="flex: 1 1 auto; min-width: 0; padding-bottom: 6px">
+            <div style="font-size: 13px; letter-spacing: 1.3px; font-weight: 700; color: #00756D; margin-bottom: 6px">VALIDATION AGENT</div>
+            <div style="font-size: 21px; line-height: 1.35; color: #1A1A1A">Runs six checks against the contract</div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 20px">
+          <div style="flex: 0 0 36px; display: flex; justify-content: center">
+            <span style="width: 2px; height: 30px; background: #DCD2C2"></span>
+          </div>
+          <div style="flex: 1 1 auto"></div>
+        </div>
+
+        <div style="display: flex; gap: 20px">
+          <div style="flex: 0 0 36px; display: flex; flex-direction: column; align-items: center">
+            <span style="width: 36px; height: 36px; border-radius: 50%; background: #00A89D; color: #04221F; font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: center">2</span>
+          </div>
+          <div style="flex: 1 1 auto; min-width: 0; padding-bottom: 6px">
+            <div style="font-size: 13px; letter-spacing: 1.3px; font-weight: 700; color: #00756D; margin-bottom: 6px">DISPUTE AGENT</div>
+            <div style="font-size: 21px; line-height: 1.35; color: #1A1A1A">Drafts the challenge, with the clause and the history attached</div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 20px">
+          <div style="flex: 0 0 36px; display: flex; justify-content: center">
+            <span style="width: 2px; height: 30px; background: #DCD2C2"></span>
+          </div>
+          <div style="flex: 1 1 auto"></div>
+        </div>
+
+        <div style="display: flex; gap: 20px">
+          <div style="flex: 0 0 36px; display: flex; flex-direction: column; align-items: center">
+            <span style="width: 36px; height: 36px; border-radius: 50%; background: #C4430F; color: #FFFFFF; font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: center">3</span>
+          </div>
+          <div style="flex: 1 1 auto; min-width: 0; background: #FFFFFF; border: 1px solid #E5DCCE; border-left: 4px solid #E8521A; padding: 16px 20px; margin-top: -6px">
+            <div style="font-size: 13px; letter-spacing: 1.3px; font-weight: 700; color: #B83D10; margin-bottom: 6px">CLAIMS ANALYST</div>
+            <div style="font-size: 21px; line-height: 1.35; color: #1A1A1A">Reviews it and sends it</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="margin-top: auto; display: flex; align-items: center; gap: 10px; flex-wrap: wrap">
+        <span style="font-size: 12px; letter-spacing: 1.3px; font-weight: 600; color: #8C8275">RECORDED</span>
+        <span style="border: 1.5px dashed #B5A992; color: #5A5247; font-size: 13px; font-weight: 500; padding: 6px 12px; border-radius: 3px">Claim, VIN, debit</span>
+        <span style="border: 1.5px dashed #B5A992; color: #5A5247; font-size: 13px; font-weight: 500; padding: 6px 12px; border-radius: 3px">Contract T&amp;C, history</span>
+        <span style="border: 1.5px dashed #B5A992; color: #5A5247; font-size: 13px; font-weight: 500; padding: 6px 12px; border-radius: 3px">Decision log, evidence</span>
+      </div>
+
+    </div>
+
+    <div style="flex: 1 1 auto; min-width: 0; background: #FFFFFF; border: 2px dashed #CDC2B0; border-radius: 3px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 28px; text-align: center">
+      <div style="font-size: 12px; letter-spacing: 1.5px; font-weight: 600; color: #8C8275">APP CAPTURE</div>
+      <div style="font-size: 16px; line-height: 1.5; color: #5A5247">The six checks resolving in order.<br>Two fail.</div>
+    </div>
+
+  </div>
+
+</div>
+</section>
+<section class="frame" data-kind="steps" data-states="3" data-label="Beat 6 &middot; Plant">
+<div style="width: 1280px; height: 720px; box-sizing: border-box; background: #FAF3EA; display: flex; flex-direction: column">
+
+  <div style="flex: 0 0 auto; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); background: #FFFFFF; border-bottom: 1px solid #E5DCCE">
+    <div style="padding: 19px 26px; display: flex; align-items: center">
+      <span style="font-size: 18px; font-weight: 500; color: #A1968A">Claims hub</span>
+    </div>
+    <div style="background: #1A1A1A; padding: 19px 26px; display: flex; align-items: center; gap: 12px">
+      <span style="width: 9px; height: 9px; border-radius: 50%; background: #F5C842"></span>
+      <span style="font-size: 18px; font-weight: 600; color: #FAF3EA">Plant</span>
+    </div>
+    <div style="padding: 19px 26px; display: flex; align-items: center">
+      <span style="font-size: 18px; font-weight: 500; color: #A1968A">Procurement</span>
+    </div>
+    <div style="padding: 19px 26px; display: flex; align-items: center">
+      <span style="font-size: 18px; font-weight: 500; color: #A1968A">Finance</span>
+    </div>
+  </div>
+
+  <div style="flex: 1 1 auto; display: flex; gap: 30px; padding: 34px 36px 32px; min-height: 0">
+
+    <div style="flex: 0 0 740px; display: flex; flex-direction: column; min-width: 0">
+
+      <h2 style="margin: 0 0 26px; font-size: 15px; letter-spacing: 1.5px; font-weight: 600; color: #6B6257">HOW A PATTERN IS CAUGHT</h2>
+
+      <div style="display: flex; flex-direction: column; margin: auto 0">
+
+        <div style="display: flex; gap: 20px">
+          <div style="flex: 0 0 36px; display: flex; justify-content: center">
+            <span style="width: 36px; height: 36px; border-radius: 50%; background: #00A89D; color: #04221F; font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: center">1</span>
+          </div>
+          <div style="flex: 1 1 auto; min-width: 0; padding-bottom: 6px">
+            <div style="font-size: 13px; letter-spacing: 1.3px; font-weight: 700; color: #00756D; margin-bottom: 6px">EARLY WARNING AGENT &middot; AROUND THE CLOCK</div>
+            <div style="font-size: 21px; line-height: 1.35; color: #1A1A1A">Links every claim to lot, shift and defect code</div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 20px">
+          <div style="flex: 0 0 36px; display: flex; justify-content: center">
+            <span style="width: 2px; height: 30px; background: #DCD2C2"></span>
+          </div>
+          <div style="flex: 1 1 auto"></div>
+        </div>
+
+        <div style="display: flex; gap: 20px">
+          <div style="flex: 0 0 36px; display: flex; justify-content: center">
+            <span style="width: 36px; height: 36px; border-radius: 50%; background: #00A89D; color: #04221F; font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: center">2</span>
+          </div>
+          <div style="flex: 1 1 auto; min-width: 0; padding-bottom: 6px">
+            <div style="font-size: 13px; letter-spacing: 1.3px; font-weight: 700; color: #00756D; margin-bottom: 6px">EARLY WARNING AGENT</div>
+            <div style="font-size: 21px; line-height: 1.35; color: #1A1A1A">Clusters the failures, opens the 8D and flags the lots at risk</div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 20px">
+          <div style="flex: 0 0 36px; display: flex; justify-content: center">
+            <span style="width: 2px; height: 30px; background: #DCD2C2"></span>
+          </div>
+          <div style="flex: 1 1 auto"></div>
+        </div>
+
+        <div style="display: flex; gap: 20px">
+          <div style="flex: 0 0 36px; display: flex; justify-content: center">
+            <span style="width: 36px; height: 36px; border-radius: 50%; background: #C4430F; color: #FFFFFF; font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: center">3</span>
+          </div>
+          <div style="flex: 1 1 auto; min-width: 0; background: #FFFFFF; border: 1px solid #E5DCCE; border-left: 4px solid #E8521A; padding: 16px 20px; margin-top: -6px">
+            <div style="font-size: 13px; letter-spacing: 1.3px; font-weight: 700; color: #B83D10; margin-bottom: 6px">QUALITY ENGINEER</div>
+            <div style="font-size: 21px; line-height: 1.35; color: #1A1A1A">Approves containment</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="margin-top: auto; display: flex; align-items: center; gap: 10px; flex-wrap: wrap">
+        <span style="font-size: 12px; letter-spacing: 1.3px; font-weight: 600; color: #8C8275">RECORDED</span>
+        <span style="border: 1.5px dashed #B5A992; color: #5A5247; font-size: 13px; font-weight: 500; padding: 6px 12px; border-radius: 3px">Lot, shift, defect codes</span>
+        <span style="border: 1.5px dashed #B5A992; color: #5A5247; font-size: 13px; font-weight: 500; padding: 6px 12px; border-radius: 3px">At-risk lots, 8D status</span>
+      </div>
+
+    </div>
+
+    <div style="flex: 1 1 auto; min-width: 0; background: #FFFFFF; border: 2px dashed #CDC2B0; border-radius: 3px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 28px; text-align: center">
+      <div style="font-size: 12px; letter-spacing: 1.5px; font-weight: 600; color: #8C8275">APP CAPTURE</div>
+      <div style="font-size: 16px; line-height: 1.5; color: #5A5247">Two lots cluster on one defect code<br>and one shift.</div>
+    </div>
+
+  </div>
+
+</div>
+</section>
+<section class="frame" data-kind="branch" data-states="5" data-label="Beat 7 &middot; Procurement">
+<div style="width: 1280px; height: 720px; box-sizing: border-box; background: #FAF3EA; display: flex; flex-direction: column">
+
+  <div style="flex: 0 0 auto; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); background: #FFFFFF; border-bottom: 1px solid #E5DCCE">
+    <div style="padding: 19px 26px; display: flex; align-items: center">
+      <span style="font-size: 18px; font-weight: 500; color: #A1968A">Claims hub</span>
+    </div>
+    <div style="padding: 19px 26px; display: flex; align-items: center">
+      <span style="font-size: 18px; font-weight: 500; color: #A1968A">Plant</span>
+    </div>
+    <div style="background: #1A1A1A; padding: 19px 26px; display: flex; align-items: center; gap: 12px">
+      <span style="width: 9px; height: 9px; border-radius: 50%; background: #F5C842"></span>
+      <span style="font-size: 18px; font-weight: 600; color: #FAF3EA">Procurement</span>
+    </div>
+    <div style="padding: 19px 26px; display: flex; align-items: center">
+      <span style="font-size: 18px; font-weight: 500; color: #A1968A">Finance</span>
+    </div>
+  </div>
+
+  <div style="flex: 1 1 auto; display: flex; gap: 30px; padding: 30px 36px 28px; min-height: 0">
+
+    <div style="flex: 0 0 740px; display: flex; flex-direction: column; min-width: 0">
+
+      <h2 style="margin: 0 0 18px; font-size: 15px; letter-spacing: 1.5px; font-weight: 600; color: #6B6257">HOW COST GOES BACK</h2>
+
+      <div style="display: flex; align-items: center; gap: 12px; background: #F3EADC; border-left: 4px solid #8B1A4A; padding: 12px 18px; margin: auto 0 18px">
+        <span style="font-size: 12px; letter-spacing: 1.3px; font-weight: 700; color: #8B1A4A">IF</span>
+        <span style="font-size: 17px; color: #3A352F">A Tier 2 or Tier 3 part caused the failure</span>
+      </div>
+
+      <div style="display: flex; flex-direction: column">
+
+        <div style="display: flex; gap: 20px">
+          <div style="flex: 0 0 36px; display: flex; justify-content: center">
+            <span style="width: 36px; height: 36px; border-radius: 50%; background: #00A89D; color: #04221F; font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: center">1</span>
+          </div>
+          <div style="flex: 1 1 auto; min-width: 0; padding-bottom: 4px">
+            <div style="font-size: 13px; letter-spacing: 1.3px; font-weight: 700; color: #00756D; margin-bottom: 5px">RECOVERY AGENT</div>
+            <div style="font-size: 20px; line-height: 1.35; color: #1A1A1A">Drafts the chargeback under that supplier's contract</div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 20px">
+          <div style="flex: 0 0 36px; display: flex; justify-content: center">
+            <span style="width: 2px; height: 24px; background: #DCD2C2"></span>
+          </div>
+          <div style="flex: 1 1 auto"></div>
+        </div>
+
+        <div style="display: flex; gap: 20px">
+          <div style="flex: 0 0 36px; display: flex; justify-content: center">
+            <span style="width: 36px; height: 36px; border-radius: 50%; background: #00A89D; color: #04221F; font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: center">2</span>
+          </div>
+          <div style="flex: 1 1 auto; min-width: 0; padding-bottom: 4px">
+            <div style="font-size: 13px; letter-spacing: 1.3px; font-weight: 700; color: #00756D; margin-bottom: 5px">RECOVERY AGENT</div>
+            <div style="font-size: 20px; line-height: 1.35; color: #1A1A1A">Tracks recovery status through to settlement</div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 20px">
+          <div style="flex: 0 0 36px; display: flex; justify-content: center">
+            <span style="width: 2px; height: 24px; background: #DCD2C2"></span>
+          </div>
+          <div style="flex: 1 1 auto"></div>
+        </div>
+
+        <div style="display: flex; gap: 20px">
+          <div style="flex: 0 0 36px; display: flex; justify-content: center">
+            <span style="width: 36px; height: 36px; border-radius: 50%; background: #C4430F; color: #FFFFFF; font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: center">3</span>
+          </div>
+          <div style="flex: 1 1 auto; min-width: 0; background: #FFFFFF; border: 1px solid #E5DCCE; border-left: 4px solid #E8521A; padding: 14px 20px; margin-top: -5px">
+            <div style="font-size: 13px; letter-spacing: 1.3px; font-weight: 700; color: #B83D10; margin-bottom: 5px">PURCHASING LEAD</div>
+            <div style="font-size: 20px; line-height: 1.35; color: #1A1A1A">Approves the chargeback</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 12px; background: #F3EADC; border-left: 4px solid #8B1A4A; padding: 12px 18px; margin-top: 18px">
+        <span style="font-size: 12px; letter-spacing: 1.3px; font-weight: 700; color: #8B1A4A">IF NOT</span>
+        <span style="font-size: 17px; color: #3A352F">The part is your own, and the cost stays with you</span>
+      </div>
+
+      <div style="margin-top: auto; padding-top: 16px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap">
+        <span style="font-size: 12px; letter-spacing: 1.3px; font-weight: 600; color: #8C8275">RECORDED</span>
+        <span style="border: 1.5px dashed #B5A992; color: #5A5247; font-size: 13px; font-weight: 500; padding: 6px 12px; border-radius: 3px">Recovery status</span>
+      </div>
+
+    </div>
+
+    <div style="flex: 1 1 auto; min-width: 0; background: #FFFFFF; border: 2px dashed #CDC2B0; border-radius: 3px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 28px; text-align: center">
+      <div style="font-size: 12px; letter-spacing: 1.5px; font-weight: 600; color: #8C8275">APP CAPTURE</div>
+      <div style="font-size: 16px; line-height: 1.5; color: #5A5247">The supplier branch, both ways.<br>Hold on the own-part path.</div>
+    </div>
+
+  </div>
+
+</div>
+</section>
+<section class="frame" data-kind="steps" data-states="4" data-label="Beat 8 &middot; Finance">
+<div style="width: 1280px; height: 720px; box-sizing: border-box; background: #FAF3EA; display: flex; flex-direction: column">
+
+  <div style="flex: 0 0 auto; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); background: #FFFFFF; border-bottom: 1px solid #E5DCCE">
+    <div style="padding: 19px 26px; display: flex; align-items: center">
+      <span style="font-size: 18px; font-weight: 500; color: #A1968A">Claims hub</span>
+    </div>
+    <div style="padding: 19px 26px; display: flex; align-items: center">
+      <span style="font-size: 18px; font-weight: 500; color: #A1968A">Plant</span>
+    </div>
+    <div style="padding: 19px 26px; display: flex; align-items: center">
+      <span style="font-size: 18px; font-weight: 500; color: #A1968A">Procurement</span>
+    </div>
+    <div style="background: #1A1A1A; padding: 19px 26px; display: flex; align-items: center; gap: 12px">
+      <span style="width: 9px; height: 9px; border-radius: 50%; background: #F5C842"></span>
+      <span style="font-size: 18px; font-weight: 600; color: #FAF3EA">Finance</span>
+    </div>
+  </div>
+
+  <div style="flex: 1 1 auto; display: flex; gap: 30px; padding: 28px 36px 26px; min-height: 0">
+
+    <div style="flex: 0 0 740px; display: flex; flex-direction: column; min-width: 0">
+
+      <h2 style="margin: 0 0 20px; font-size: 15px; letter-spacing: 1.5px; font-weight: 600; color: #6B6257">HOW THE BOOKS CLOSE</h2>
+
+      <div style="display: flex; flex-direction: column; margin: auto 0">
+
+        <div style="display: flex; gap: 20px">
+          <div style="flex: 0 0 36px; display: flex; justify-content: center">
+            <span style="width: 36px; height: 36px; border-radius: 50%; background: #00A89D; color: #04221F; font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: center">1</span>
+          </div>
+          <div style="flex: 1 1 auto; min-width: 0; padding-bottom: 4px">
+            <div style="font-size: 13px; letter-spacing: 1.3px; font-weight: 700; color: #00756D; margin-bottom: 5px">RECONCILIATION AGENT</div>
+            <div style="font-size: 20px; line-height: 1.35; color: #1A1A1A">Matches every OEM debit note to the approved claim and flags the variance</div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 20px">
+          <div style="flex: 0 0 36px; display: flex; justify-content: center">
+            <span style="width: 2px; height: 22px; background: #DCD2C2"></span>
+          </div>
+          <div style="flex: 1 1 auto"></div>
+        </div>
+
+        <div style="display: flex; gap: 20px">
+          <div style="flex: 0 0 36px; display: flex; justify-content: center">
+            <span style="width: 36px; height: 36px; border-radius: 50%; background: #C4430F; color: #FFFFFF; font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: center">2</span>
+          </div>
+          <div style="flex: 1 1 auto; min-width: 0; background: #FFFFFF; border: 1px solid #E5DCCE; border-left: 4px solid #E8521A; padding: 13px 20px; margin-top: -5px">
+            <div style="font-size: 13px; letter-spacing: 1.3px; font-weight: 700; color: #B83D10; margin-bottom: 5px">CONTROLLER</div>
+            <div style="font-size: 20px; line-height: 1.35; color: #1A1A1A">Approves the posting</div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 20px">
+          <div style="flex: 0 0 36px; display: flex; justify-content: center">
+            <span style="width: 2px; height: 22px; background: #DCD2C2"></span>
+          </div>
+          <div style="flex: 1 1 auto"></div>
+        </div>
+
+        <div style="display: flex; gap: 20px">
+          <div style="flex: 0 0 36px; display: flex; justify-content: center">
+            <span style="width: 36px; height: 36px; border-radius: 50%; background: #00A89D; color: #04221F; font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: center">3</span>
+          </div>
+          <div style="flex: 1 1 auto; min-width: 0; padding-bottom: 4px">
+            <div style="font-size: 13px; letter-spacing: 1.3px; font-weight: 700; color: #00756D; margin-bottom: 5px">RECONCILIATION AGENT</div>
+            <div style="font-size: 20px; line-height: 1.35; color: #1A1A1A">Reports net cost by product, plant, region and OEM</div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 20px">
+          <div style="flex: 0 0 36px; display: flex; justify-content: center">
+            <span style="width: 2px; height: 22px; background: #DCD2C2"></span>
+          </div>
+          <div style="flex: 1 1 auto"></div>
+        </div>
+
+        <div style="display: flex; gap: 20px">
+          <div style="flex: 0 0 36px; display: flex; justify-content: center">
+            <span style="width: 36px; height: 36px; border-radius: 50%; background: #00A89D; color: #04221F; font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: center">4</span>
+          </div>
+          <div style="flex: 1 1 auto; min-width: 0; padding-bottom: 4px">
+            <div style="font-size: 13px; letter-spacing: 1.3px; font-weight: 700; color: #00756D; margin-bottom: 5px">RECONCILIATION AGENT</div>
+            <div style="font-size: 20px; line-height: 1.35; color: #1A1A1A">Runs what-if scenarios on that record</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="margin-top: auto; padding-top: 14px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap">
+        <span style="font-size: 12px; letter-spacing: 1.3px; font-weight: 600; color: #8C8275">RECORDED</span>
+        <span style="border: 1.5px dashed #B5A992; color: #5A5247; font-size: 13px; font-weight: 500; padding: 6px 12px; border-radius: 3px">Debit vs claim variance</span>
+        <span style="border: 1.5px dashed #B5A992; color: #5A5247; font-size: 13px; font-weight: 500; padding: 6px 12px; border-radius: 3px">Net cost by OEM, region</span>
+      </div>
+
+    </div>
+
+    <div style="flex: 1 1 auto; min-width: 0; background: #FFFFFF; border: 2px dashed #CDC2B0; border-radius: 3px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 28px; text-align: center">
+      <div style="font-size: 12px; letter-spacing: 1.5px; font-weight: 600; color: #8C8275">APP CAPTURE</div>
+      <div style="font-size: 16px; line-height: 1.5; color: #5A5247">Variance flagged, then net cost,<br>then one scenario against the reserve.</div>
+    </div>
+
+  </div>
+
+</div>
+</section>
+<section class="frame" data-kind="cards" data-states="5" data-label="Beat 9 &middot; Who decides">
+<div style="width: 1280px; height: 720px; box-sizing: border-box; background: #FAF3EA; display: flex; flex-direction: column">
+
+  <div style="flex: 0 0 auto; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); background: #1A1A1A; border-bottom: 1px solid #E5DCCE">
+    <div style="padding: 19px 26px; display: flex; align-items: center; gap: 12px">
+      <span style="width: 9px; height: 9px; border-radius: 50%; background: #F5C842"></span>
+      <span style="font-size: 18px; font-weight: 600; color: #FAF3EA">Claims hub</span>
+    </div>
+    <div style="padding: 19px 26px; display: flex; align-items: center; gap: 12px">
+      <span style="width: 9px; height: 9px; border-radius: 50%; background: #F5C842"></span>
+      <span style="font-size: 18px; font-weight: 600; color: #FAF3EA">Plant</span>
+    </div>
+    <div style="padding: 19px 26px; display: flex; align-items: center; gap: 12px">
+      <span style="width: 9px; height: 9px; border-radius: 50%; background: #F5C842"></span>
+      <span style="font-size: 18px; font-weight: 600; color: #FAF3EA">Procurement</span>
+    </div>
+    <div style="padding: 19px 26px; display: flex; align-items: center; gap: 12px">
+      <span style="width: 9px; height: 9px; border-radius: 50%; background: #F5C842"></span>
+      <span style="font-size: 18px; font-weight: 600; color: #FAF3EA">Finance</span>
+    </div>
+  </div>
+
+  <div style="flex: 1 1 auto; display: flex; gap: 30px; padding: 32px 36px 30px; min-height: 0">
+
+    <div style="flex: 0 0 740px; display: flex; flex-direction: column; min-width: 0">
+
+      <h2 style="margin: 0 0 20px; font-size: 15px; letter-spacing: 1.5px; font-weight: 600; color: #6B6257">WHO DECIDES</h2>
+
+      <div style="display: flex; flex-direction: column; gap: 11px; margin: auto 0">
+
+        <div style="display: flex; align-items: center; gap: 18px; background: #FFFFFF; border: 1px solid #E5DCCE; border-left: 4px solid #E8521A; padding: 15px 20px">
+          <div style="flex: 0 0 196px; font-size: 19px; font-weight: 600; color: #1A1A1A">Claims analyst</div>
+          <div style="flex: 1 1 auto; font-size: 18px; color: #4A4238; min-width: 0">reviews and sends the dispute</div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 18px; background: #FFFFFF; border: 1px solid #E5DCCE; border-left: 4px solid #E8521A; padding: 15px 20px">
+          <div style="flex: 0 0 196px; font-size: 19px; font-weight: 600; color: #1A1A1A">Quality engineer</div>
+          <div style="flex: 1 1 auto; font-size: 18px; color: #4A4238; min-width: 0">approves containment</div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 18px; background: #FFFFFF; border: 1px solid #E5DCCE; border-left: 4px solid #E8521A; padding: 15px 20px">
+          <div style="flex: 0 0 196px; font-size: 19px; font-weight: 600; color: #1A1A1A">Purchasing lead</div>
+          <div style="flex: 1 1 auto; font-size: 18px; color: #4A4238; min-width: 0">approves the chargeback</div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 18px; background: #FFFFFF; border: 1px solid #E5DCCE; border-left: 4px solid #E8521A; padding: 15px 20px">
+          <div style="flex: 0 0 196px; font-size: 19px; font-weight: 600; color: #1A1A1A">Controller</div>
+          <div style="flex: 1 1 auto; font-size: 18px; color: #4A4238; min-width: 0">approves the posting</div>
+        </div>
+
+      </div>
+
+      <div style="margin-top: auto; padding-top: 22px; border-top: 3px solid #E8521A; display: flex; flex-direction: column; gap: 2px">
+        <span style="font-size: 28px; font-weight: 600; color: #1A1A1A">The agent swarm assists.</span>
+        <span style="font-size: 28px; font-weight: 600; color: #B83D10">Your people make the call.</span>
+      </div>
+
+    </div>
+
+    <div style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+      <div style="flex: 1 1 auto; background: #FFFFFF; border: 2px dashed #CDC2B0; border-radius: 3px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 28px; text-align: center">
+        <div style="font-size: 12px; letter-spacing: 1.5px; font-weight: 600; color: #8C8275">APP CAPTURE</div>
+        <div style="font-size: 16px; line-height: 1.5; color: #5A5247">An item held at the gate,<br>the role named beside it.</div>
+      </div>
+      <div style="flex: 0 0 auto; border: 1.5px dashed #B5A992; color: #5A5247; font-size: 14px; font-weight: 500; padding: 13px 16px; border-radius: 3px; text-align: center">One source of truth underneath all four</div>
+    </div>
+
+  </div>
+
+</div>
+</section>
+</div></div>
+
+<div id="hud">
+  <button id="play" type="button">Play</button>
+  <button id="prev" class="ghost" type="button">Prev</button>
+  <button id="next" class="ghost" type="button">Next</button>
+  <span id="label">&nbsp;</span>
+  <span id="pos">&nbsp;</span>
+  <span id="bar"><span id="fill"></span></span>
+  <span id="keys">&larr; &rarr; step &middot; space play &middot; H hide</span>
+</div>
+
+<script>
+(function () {
+  var frames = [].slice.call(document.querySelectorAll('.frame'));
+  var seq = [];
+  frames.forEach(function (f, fi) {
+    var n = parseInt(f.dataset.states, 10);
+    for (var s = 1; s <= n; s++) seq.push({ fi: fi, state: s });
+  });
+
+  function leftCol(frame) {
+    return frame.querySelector('div[style*="flex: 0 0 740px"]');
+  }
+
+  function apply(frame, kind, state) {
+    var left = leftCol(frame);
+    if (!left) return;
+    [].slice.call(left.querySelectorAll('*')).forEach(function (el) { el.style.visibility = ''; });
+    var kids = [].slice.call(left.children);
+    var hide = function (el) { if (el) el.style.visibility = 'hidden'; };
+
+    if (kind === 'steps') {
+      var box = kids.filter(function (k) { return (k.getAttribute('style') || '').indexOf('margin: auto 0') > -1; })[0];
+      if (!box) return;
+      [].slice.call(box.children).forEach(function (c, i) { if (i > 2 * (state - 1)) hide(c); });
+    }
+
+    if (kind === 'branch') {
+      var ifBand = kids.filter(function (k) { return (k.getAttribute('style') || '').indexOf('margin: auto 0 18px') > -1; })[0];
+      var box2   = kids.filter(function (k) { return k.getAttribute('style') === 'display: flex; flex-direction: column'; })[0];
+      var ifNot  = kids.filter(function (k) { return (k.getAttribute('style') || '').indexOf('margin-top: 18px') > -1; })[0];
+      if (!box2) return;
+      var units = [ifBand, box2.children[0], box2.children[2], box2.children[4], ifNot];
+      units.forEach(function (u, i) { if (i + 1 > state) hide(u); });
+      if (state < 3) hide(box2.children[1]);
+      if (state < 4) hide(box2.children[3]);
+    }
+
+    if (kind === 'cards') {
+      var box3 = kids.filter(function (k) { return (k.getAttribute('style') || '').indexOf('margin: auto 0') > -1; })[0];
+      if (!box3) return;
+      [].slice.call(box3.children).forEach(function (c, i) { if (i + 1 > state) hide(c); });
+      if (state < 5) hide(kids[kids.length - 1]);
+    }
+  }
+
+  var i = 0, timer = null;
+  var labelEl = document.getElementById('label');
+  var posEl = document.getElementById('pos');
+  var fillEl = document.getElementById('fill');
+  var playBtn = document.getElementById('play');
+  var hud = document.getElementById('hud');
+
+  function show(n) {
+    i = (n + seq.length) % seq.length;
+    var cur = seq[i];
+    frames.forEach(function (f, fi) { f.classList.toggle('on', fi === cur.fi); });
+    var f = frames[cur.fi];
+    apply(f, f.dataset.kind, cur.state);
+    labelEl.innerHTML = f.dataset.label;
+    posEl.textContent = 'state ' + cur.state + ' of ' + f.dataset.states + '   (' + (i + 1) + '/' + seq.length + ')';
+    fillEl.style.width = ((i + 1) / seq.length * 100) + '%';
+  }
+
+  function stop() { if (timer) { clearInterval(timer); timer = null; } playBtn.textContent = 'Play'; }
+  function play() {
+    stop();
+    timer = setInterval(function () { show(i + 1); }, 2600);
+    playBtn.textContent = 'Pause';
+  }
+
+  playBtn.addEventListener('click', function () { timer ? stop() : play(); });
+  document.getElementById('next').addEventListener('click', function () { stop(); show(i + 1); });
+  document.getElementById('prev').addEventListener('click', function () { stop(); show(i - 1); });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight') { stop(); show(i + 1); }
+    else if (e.key === 'ArrowLeft') { stop(); show(i - 1); }
+    else if (e.key === ' ') { e.preventDefault(); timer ? stop() : play(); }
+    else if (e.key === 'h' || e.key === 'H') { hud.classList.toggle('hide');
+      document.body.classList.toggle('nohud'); fit(); }
+  });
+
+  function fit() {
+    var st = document.getElementById('stage');
+    var s = Math.min(st.clientWidth / 1280, st.clientHeight / 720);
+    document.getElementById('scaler').style.transform = 'scale(' + s + ')';
+  }
+  window.addEventListener('resize', fit);
+  fit();
+  show(0);
+})();
+</script>
+</body>
+</html>
